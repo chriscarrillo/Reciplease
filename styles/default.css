@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Logo Lite';
+    src: url('../fonts/LITE.TTF');
+}
+
+@font-face {
+    font-family: 'Gothic';
+    src: url('../fonts/FRABK.TTF');
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/FuturaHeavy.ttf');
+}
+
+@font-face {
+    font-family: 'Futura Light';
+    src: url('../fonts/FuturaLight.ttf');
+}
+
+body {
+    margin: 0px auto;
+    font-family: 'Futura Light', sans-serif;
+    background-color: #FBEFE7;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* START Logo */
+.logo {
+    font-family: 'Logo Lite';
+    display: block;
+    float: left;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #77191D;
+    font-weight: 100;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.7s;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+    transition: 0.7s all;
+}
+
+.logo p {
+    margin: 0px;
+    color: #FFFFFF;
+    font-size: 320%;
+    letter-spacing: 2px;
+    line-height: 70%;
+    text-align: right;
+}
+
+#dotCom {
+    font-family: 'Gothic';
+    font-size: 130%;
+}
+
+#innerCircle {
+    width: 285px;
+    height: 285px;
+    border-radius: 100%;
+    border: 1px solid #F5E7CC;
+    position: absolute;
+    left: 3%;
+    z-index: 1;
+}
+
+#outerCircle {
+    width: 285px;
+    height: 285px;
+    border-radius: 100%;
+    border: 1px solid #77191D;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    z-index: 0;
+}
+/* END Logo */
+
+/* START Login */
+#loginLogo {
+    position: absolute;
+    bottom: 65%;
+    right: 86%;
+}
+
+#loginBox {
+    width: 45%;
+    height: 280px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: -1;
+    box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
+}
+
+#loginBox h1 {
+    margin: 3% 10%;
+    font-family: 'Futura';
+    font-style: italic;
+    font-size: 400%;
+}
+
+#redLoginBox {
+    width: 45%;
+    height: 280px;
+    border-radius: 10px;
+    background-color: #89383A;
+    position: absolute;
+    z-index: -3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -42%);
+}
+
+#loginCircle {
+    width: 280px;
+    height: 280px;
+    border-radius: 100%;
+    background-color: #DCD2C4;
+    position: absolute;
+    left: 90%;
+    top: 60%;
+}
+
+#loginForm {
+    margin: 0px 4%;
+}
+
+#loginForm input[type="text"], #loginForm input[type="password"] {
+    display: block;
+    float: right;
+    width: 70%;
+    height: 30px;
+    padding: 0% 2%;
+    margin: 1% 0%;
+    border-radius: 10px;
+    border: none;
+    text-align: right;
+    background-color: #DCD2C4;
+    font-size: 110%;
+    letter-spacing: 1px;
+}
+
+#links {
+    display: block;
+    float: left;
+    width: 66%;
+    height: 30px;
+    line-height: 30px;
+    margin: 1% 0%;
+    padding: 0% 2%;
+}
+
+#links a {
+    color: #b5aa99;
+    text-decoration: none;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+#links a:last-child {
+    float: right;
+}
+
+#loginBtn {
+    font-family: 'Futura';
+    display: block;
+    float: right;
+    width: 30%;
+    height: 30px;
+    padding: 0% 2%;
+    margin: 1% 0%;
+    border-radius: 10px;
+    font-size: 140%;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    font-style: italic;
+    cursor: pointer;
+    background-color: #77191D;
+    transition: 0.2s all;
+}
+
+#loginBtn:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #77191D;
+    color: #77191D;
+    transition: 0.2s all;
+}
+/* END Login */
