@@ -88,42 +88,45 @@ body {
 /* END Logo */
 
 /* START Login */
-#loginLogo {
+#logo {
     position: absolute;
     bottom: 65%;
     right: 86%;
 }
 
-#loginBox {
+#centerBox {
     width: 45%;
-    height: 280px;
+    height: auto;
     border-radius: 10px;
     background-color: #FFFFFF;
     position: absolute;
     z-index: -1;
     box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
+    padding-bottom: 2%;
 }
 
-#loginBox h1 {
+#centerBox h1 {
     margin: 3% 10%;
     font-family: 'Futura';
     font-style: italic;
     font-size: 400%;
 }
 
-#redLoginBox {
+#redBox {
     width: 45%;
-    height: 280px;
+    height: 100px;
+    opacity: 0;
     border-radius: 10px;
     background-color: #89383A;
     position: absolute;
     z-index: -3;
     top: 50%;
     left: 50%;
+    transition: opacity 1s;
     transform: translate(-48%, -42%);
 }
 
-#loginCircle {
+#circle {
     width: 280px;
     height: 280px;
     border-radius: 100%;
@@ -137,7 +140,7 @@ body {
     margin: 0px 4%;
 }
 
-#loginForm input[type="text"], #loginForm input[type="password"] {
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"] {
     display: block;
     float: right;
     width: 70%;
@@ -175,7 +178,7 @@ body {
     float: right;
 }
 
-#loginBtn {
+.button {
     font-family: 'Futura';
     display: block;
     float: right;
@@ -193,7 +196,7 @@ body {
     transition: 0.2s all;
 }
 
-#loginBtn:hover {
+.button:hover {
     background-color: #FFFFFF;
     border: 1px solid #77191D;
     color: #77191D;
