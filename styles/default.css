@@ -122,6 +122,7 @@ body {
     z-index: -3;
     top: 50%;
     left: 50%;
+    z-index: -2;
     transition: opacity 1s;
     transform: translate(-48%, -42%);
 }
@@ -194,6 +195,7 @@ body {
     cursor: pointer;
     background-color: #77191D;
     transition: 0.2s all;
+    -webkit-appearance: none;
 }
 
 .button:hover {
