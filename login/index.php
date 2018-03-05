@@ -32,7 +32,6 @@
             </div>
             <input type="submit" id="loginBtn" class="button" name="loginBtn" value="submit" />
         </form>
-        
     </div>
 </div>
 </body>
