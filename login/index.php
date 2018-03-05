@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Reciplease.com | Login</title>
-    <?php include "head.php" ?>
+    <?php include "../templates/head.php" ?>
 </head>
 <body>
 <div id="login">
@@ -12,7 +12,7 @@
     <div id="centerBox" class="centered">
         <div id="logo">
             <?php
-            include "../logo.php";
+            include "../templates/logo.php";
             ?>
         </div>
         <h1>log in</h1>
