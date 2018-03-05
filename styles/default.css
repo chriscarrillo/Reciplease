@@ -31,6 +31,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.mobile {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 /* START Logo */
 .logo {
     font-family: 'Logo Lite';
@@ -195,7 +201,6 @@ body {
     cursor: pointer;
     background-color: #77191D;
     transition: 0.2s all;
-    -webkit-appearance: none;
 }
 
 .button:hover {
