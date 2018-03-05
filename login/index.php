@@ -17,13 +17,13 @@
         </div>
         <h1>log in</h1>
         <form action="" method="post" id="loginForm" class="form">
-            <input type="text" id="username" class="mobile" name="username" placeholder="username" /><br />
-            <input type="password" id="password" class="mobile" name="password" placeholder="password" /><br />
+            <input type="text" id="username" name="username" placeholder="username" /><br />
+            <input type="password" id="password" name="password" placeholder="password" /><br />
             <div id="links">
                 <a href="../register" title="register">register</a>
                 <a href="../forgot" title="forgot username / password">forgot username / password</a>
             </div>
-            <input type="submit" id="loginBtn" class="button mobile" name="loginBtn" value="submit" />
+            <input type="submit" id="loginBtn" class="button" name="loginBtn" value="submit" />
         </form>
     </div>
 </div>

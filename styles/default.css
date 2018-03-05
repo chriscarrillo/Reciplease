@@ -31,12 +31,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.mobile {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 /* START Logo */
 .logo {
     font-family: 'Logo Lite';
@@ -145,6 +139,12 @@ body {
 
 #loginForm {
     margin: 0px 4%;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"], .form input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"] {
