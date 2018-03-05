@@ -17,13 +17,13 @@
         </div>
         <h1>register</h1>
         <form action="" method="post" id="registerForm" class="form">
-            <input type="text" id="firstName" class="mobile" name="firstName" placeholder="first name" /><br />
-            <input type="text" id="lastName" class="mobile" name="lastName" placeholder="last name" /><br />
-            <input type="email" id="email" class="mobile" name="email" placeholder="email" /><br />
-            <input type="text" id="username" class="mobile" name="username" placeholder="username" /><br />
-            <input type="password" id="password" class="mobile" name="password" placeholder="password" /><br />
-            <input type="date" id="dob" name="dob" class="mobile" placeholder="date of birth" /><br />
-            <input type="submit" id="registerBtn" class="button mobile" name="registerBtn" value="register" />
+            <input type="text" id="firstName" name="firstName" placeholder="first name" /><br />
+            <input type="text" id="lastName" name="lastName" placeholder="last name" /><br />
+            <input type="email" id="email" name="email" placeholder="email" /><br />
+            <input type="text" id="username" name="username" placeholder="username" /><br />
+            <input type="password" id="password" name="password" placeholder="password" /><br />
+            <input type="date" id="dob" name="dob" placeholder="date of birth" /><br />
+            <input type="submit" id="registerBtn" class="button" name="registerBtn" value="register" />
         </form>
     </div>
 </div>
