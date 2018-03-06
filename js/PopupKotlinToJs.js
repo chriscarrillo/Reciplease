@@ -1,7 +1,7 @@
 if (typeof kotlin === 'undefined') {
-  throw new Error("Error loading module 'Kotlin to JS'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'Kotlin to JS'.");
+  throw new Error("Error loading module 'PopupKotlinToJs'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'PopupKotlinToJs'.");
 }
-this['Kotlin to JS'] = function (_, Kotlin) {
+var PopupKotlinToJs = function (_, Kotlin) {
   'use strict';
   var throwCCE = Kotlin.throwCCE;
   var Unit = Kotlin.kotlin.Unit;
@@ -34,10 +34,9 @@ this['Kotlin to JS'] = function (_, Kotlin) {
     button.addEventListener('click', main$lambda(modal));
     span.addEventListener('click', main$lambda_0(modal));
     window.addEventListener('click', main$lambda_1(modal));
-    window.onclick;
   }
   _.main_kand9s$ = main;
   main([]);
-  Kotlin.defineModule('Kotlin to JS', _);
+  Kotlin.defineModule('PopupKotlinToJs', _);
   return _;
-}(typeof this['Kotlin to JS'] === 'undefined' ? {} : this['Kotlin to JS'], kotlin);
+}(typeof PopupKotlinToJs === 'undefined' ? {} : PopupKotlinToJs, kotlin);
