@@ -7,4 +7,4 @@
 <script type="text/javascript" src="../js/kotlin.js"></script>
 <script type="text/javascript" src="../js/kotlinx-html-js.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/PopupKotlinToJs.js"></script> 
+<!--<script type="text/javascript" src="../js/PopupKotlinToJs.js"></script> -->
