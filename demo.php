@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Test Page</title>
-    <link rel="stylesheet" type="text/css" href="../styles/default.css" />
-    <link rel="stylesheet" type="text/css" href="../styles/medium.css" media="only screen and (max-width: 1100px)" />
-    <link rel="stylesheet" type="text/css" href="../styles/small.css" media="only screen and (max-width: 750px)" />
+    <link rel="stylesheet" type="text/css" href="styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="styles/medium.css" media="only screen and (max-width: 1100px)" />
+    <link rel="stylesheet" type="text/css" href="styles/small.css" media="only screen and (max-width: 750px)" />
     <script type="text/javascript" src="js/kotlin.js"></script>
     <script type="text/javascript" src="js/kotlinx-html-js.js"></script>
     <script type="text/javascript" src="js/PopupKotlinToJs.js"></script>
@@ -27,6 +27,7 @@
 
 </div>
 
+<!--
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -54,5 +55,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+-->
+<script type="text/javascript" src="js/PopupKotlinToJs.js"></script>
 </body>
 </html>
