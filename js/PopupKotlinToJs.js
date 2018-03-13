@@ -28,8 +28,8 @@ var PopupKotlinToJs = function (_, Kotlin) {
   }
   function main(args) {
     var tmp$, tmp$_0, tmp$_1;
-    var modal = Kotlin.isType(tmp$ = document.getElementById('myModal'), HTMLBodyElement) ? tmp$ : throwCCE();
-    var button = Kotlin.isType(tmp$_0 = document.getElementById('loginBtn'), HTMLButtonElement) ? tmp$_0 : throwCCE();
+    var modal = Kotlin.isType(tmp$ = document.getElementById('myModal'), HTMLElement) ? tmp$ : throwCCE();
+    var button = Kotlin.isType(tmp$_0 = document.getElementById('myBtn'), HTMLElement) ? tmp$_0 : throwCCE();
     var span = Kotlin.isType(tmp$_1 = document.getElementsByClassName('close'), HTMLElement) ? tmp$_1 : throwCCE();
     button.addEventListener('click', main$lambda(modal));
     span.addEventListener('click', main$lambda_0(modal));
