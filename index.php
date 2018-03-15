@@ -12,12 +12,16 @@
     <script type="text/javascript" src="js/kotlinx-html-js.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
-<div id="home">
-    <?php
-    include "templates/logo.php";
-    ?>
-</div>
+<body id="homePage">
+    <div id="home">
+        <?php
+        include "templates/logo.php";
+        ?>
+    </div>
+    <form action="" method="get" id="searchForm" class="form">
+            <input type="textSearch" id="search" name="search" placeholder="search" /><br />
+    </form>
+
 <?php
     
 ?>
