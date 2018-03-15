@@ -26,7 +26,7 @@
     </form>
 
 <?php
-    
+    include "templates/profilepic.php";
 ?>
 <!--<h1>Reciplease</h1>-->
 </body>
