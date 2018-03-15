@@ -22,7 +22,7 @@
                 <input type="text" id="lastName" class="mobile" name="lastName" placeholder="last name" required /><br />
                 <input type="email" id="email" class="mobile" name="email" placeholder="email" required /><br />
                 <select id="favoriteFoodSelection">
-                    <option value="0">Favorite Type of Food:</option>
+                    <option value="">Favorite Type of Food:</option>
                     <option value="african">African</option>
                     <option value="american">American</option>
                     <option value="british">British</option>
@@ -52,14 +52,62 @@
             <div class="half">
                 <input type="text" id="username" name="username" placeholder="username" required /><br />
                 <input type="password" id="password" name="password" placeholder="password" required /><br />
-                <input type="text" id="dob" name="dob" max="<?php print date("Y-m-d") ?>" placeholder="date of birth" onfocus="(this.type='date')" onblur="(this.type='text')" required /><br />
-                <div id="dietaryRestrctionsCheckboxes">
-                    <p>Dietary Restrictions:</p>
-                    <label><input type="checkbox" name="dietaryRestrctions" value="lacto vegetarian"> Lacto Vegetarian</label><br />
-                    <label><input type="checkbox" name="dietaryRestrctions" value="ovo vegetarian"> Ovo Vegetarian</label><br />
-                    <label><input type="checkbox" name="dietaryRestrctions" value="pescetarian"> Pescetarian</label><br />
-                    <label><input type="checkbox" name="dietaryRestrctions" value="vegan"> Vegan</label><br />
-                    <label><input type="checkbox" name="dietaryRestrctions" value="vegetarian"> Vegetarian</label><br />
+                <div class="right">
+                    <p>date of birth</p>
+                    <select id="dobMonth">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select id="dobDay">
+                        <?php
+                            for ($i = 1; $i <= 31; $i++) {
+                        ?>
+
+                        <option value="
+                            <?php
+                                    ($i < 10) ? print 0 . $i : print $i;
+                            ?>
+                            "><?php ($i < 10) ? print 0 . $i : print $i; ?>
+                        </option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <select id="dobYear">
+                        <?php
+                            for ($i = date('Y'); $i >= (int) date('Y') - 100; $i--) {
+                        ?>
+
+                        <option value="
+                            <?php
+                                    print $i;
+                            ?>
+                            "><?php print $i; ?>
+                        </option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="clear">
+                    <div id="dietaryRestrctionsCheckboxes">
+                        <p>Dietary Restrictions:</p>
+                        <label><input type="checkbox" name="dietaryRestrctions" value="lacto vegetarian"> Lacto Vegetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrctions" value="ovo vegetarian"> Ovo Vegetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrctions" value="pescetarian"> Pescetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrctions" value="vegan"> Vegan</label><br />
+                        <label><input type="checkbox" name="dietaryRestrctions" value="vegetarian"> Vegetarian</label><br />
+                    </div>
                 </div>
             </div>
             <input type="submit" id="registerBtn" class="button mobile" name="registerBtn" value="register" />
