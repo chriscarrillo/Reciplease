@@ -5,6 +5,7 @@
     <?php include "../templates/head.php" ?>
 </head>
 <body>
+<?php include "../templates/functions.php" ?>
 <div id="register">
     <div id="redBox">
         <div id="circle"></div>
@@ -16,12 +17,12 @@
             ?>
         </div>
         <h1>register</h1>
-        <form action="" method="post" id="registerForm" class="form">
+        <form action="index.php" method="post" id="registerForm" class="form">
             <div class="half">
-                <input type="text" id="firstName" class="mobile" name="firstName" placeholder="first name" autofocus="on" required /><br />
-                <input type="text" id="lastName" class="mobile" name="lastName" placeholder="last name" required /><br />
-                <input type="email" id="email" class="mobile" name="email" placeholder="email" required /><br />
-                <select id="favoriteFoodSelection">
+                <input type="text" id="firstName" name="firstName" placeholder="first name" autofocus="on" required /><br />
+                <input type="text" id="lastName" name="lastName" placeholder="last name" required /><br />
+                <input type="email" id="email" name="email" placeholder="email" required /><br />
+                <select id="favoriteFoodSelection" name="favoriteFood">
                     <option value="">Favorite Type of Food:</option>
                     <option value="african">African</option>
                     <option value="american">American</option>
@@ -54,7 +55,7 @@
                 <input type="password" id="password" name="password" placeholder="password" required /><br />
                 <div class="right">
                     <p>date of birth</p>
-                    <select id="dobMonth">
+                    <select name="dobMonth">
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
@@ -68,7 +69,7 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
-                    <select id="dobDay">
+                    <select name="dobDay">
                         <?php
                             for ($i = 1; $i <= 31; $i++) {
                         ?>
@@ -83,7 +84,7 @@
                             }
                         ?>
                     </select>
-                    <select id="dobYear">
+                    <select name="dobYear">
                         <?php
                             for ($i = date('Y'); $i >= (int) date('Y') - 100; $i--) {
                         ?>
@@ -102,19 +103,26 @@
                 <div class="clear">
                     <div id="dietaryRestrctionsCheckboxes">
                         <p>Dietary Restrictions:</p>
-                        <label><input type="checkbox" name="dietaryRestrctions" value="lacto vegetarian"> Lacto Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrctions" value="ovo vegetarian"> Ovo Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrctions" value="pescetarian"> Pescetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrctions" value="vegan"> Vegan</label><br />
-                        <label><input type="checkbox" name="dietaryRestrctions" value="vegetarian"> Vegetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrictions[]" value="lacto vegetarian"> Lacto Vegetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrictions[]" value="ovo vegetarian"> Ovo Vegetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrictions[]" value="pescetarian"> Pescetarian</label><br />
+                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegan"> Vegan</label><br />
+                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegetarian"> Vegetarian</label><br />
                     </div>
                 </div>
             </div>
             <div id="links">
                 <a href="../login" title="login">login</a>
             </div>
-            <input type="submit" id="registerBtn" class="button mobile" name="registerBtn" value="register" />
+            <input type="submit" id="registerBtn" class="button" name="registerBtn" value="register" />
         </form>
+        
+        <?php
+            if (isset($_POST["registerBtn"])) {
+                $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $dob, $dietaryRestrictions);
+            }
+        ?>
     </div>
 </div>
 </body>
