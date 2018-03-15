@@ -13,9 +13,14 @@
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
+<div id="home">
+    <?php
+    include "templates/logo.php";
+    ?>
+</div>
 <?php
     
 ?>
-<h1>Reciplease</h1>
+<!--<h1>Reciplease</h1>-->
 </body>
 </html>

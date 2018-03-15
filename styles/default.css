@@ -23,7 +23,6 @@ body {
     font-family: 'Futura Light', sans-serif;
     background-color: #FBEFE7;
 }
-
 .centered {
     position: absolute;
     top: 50%;
@@ -272,3 +271,13 @@ body {
     cursor: pointer;
 }
 /* END MODAL */
+
+/* HOME PAGE */
+#home {
+    position: absolute;
+    transform: scale(0.8);
+    width: 21%;
+    height: 52.5%;
+    top: -20px;
+    left: 30px;
+}
