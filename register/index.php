@@ -110,6 +110,9 @@
                     </div>
                 </div>
             </div>
+            <div id="links">
+                <a href="../login" title="login">login</a>
+            </div>
             <input type="submit" id="registerBtn" class="button mobile" name="registerBtn" value="register" />
         </form>
     </div>
