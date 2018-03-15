@@ -327,3 +327,7 @@ body {
     font-size: 110%;
     letter-spacing: 1px;
 }
+/*Start Profile Picture*/
+#profilepic {
+    border-radius: 50%;
+}
