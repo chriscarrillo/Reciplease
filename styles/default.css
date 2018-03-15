@@ -30,9 +30,22 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.clear {
+    clear: both;
+}
+
 .half {
     width: 50%;
     float: left;
+}
+
+.right {
+    float: right;
+}
+
+.form p {
+    font-family: 'Futura';
+    margin: 2% 0%;
 }
 
 .form h2 {
