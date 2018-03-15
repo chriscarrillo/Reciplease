@@ -273,6 +273,11 @@ body {
 /* END MODAL */
 
 /* HOME PAGE */
+#homePage {
+    margin: 0px auto;
+    font-family: 'Futura Light', sans-serif;
+    background-color: #f5e7ca;
+}
 #home {
     position: absolute;
     transform: scale(0.8);
@@ -280,4 +285,32 @@ body {
     height: 52.5%;
     top: -20px;
     left: 30px;
+}
+
+#search {
+    width: 30%;
+    margin-right: 40%;
+    margin-left: 40%;
+    margin-top: 6%;
+}
+
+.form input[type="textSearch"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form input[type="textSearch"]{
+    display: block;
+    float: right;
+    width: 60%;
+    height: 40px;
+    padding: 0% 2%;
+    margin: 1% 0%;
+    border-radius: 20px;
+    border: none;
+    text-align: right;
+    background-color: #fffcf8;
+    font-size: 110%;
+    letter-spacing: 1px;
 }
