@@ -107,7 +107,7 @@ body {
     position: absolute;
     z-index: -1;
     box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
-    padding-bottom: 2%;
+    padding: 0% 2% 2% 2%;
 }
 
 #centerBox h1 {
@@ -215,6 +215,12 @@ body {
     transition: 0.2s all;
 }
 /* END Login */
+
+/* START Register */
+#favoriteFoodSelection, #dietaryRestrctionsCheckboxes {
+    float: right;
+}
+/* END Register */
 
 /* START modal */
 /* The Modal (background) */
