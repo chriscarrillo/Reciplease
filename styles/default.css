@@ -36,6 +36,13 @@ body {
     float: left;
 }
 
+.form h2 {
+    font-family: 'Futura';
+    font-weight: normal;
+    font-size: 120%;
+    float: right;
+}
+
 /* START Logo */
 .logo {
     font-family: 'Logo Lite';
@@ -142,8 +149,8 @@ body {
     top: 60%;
 }
 
-#loginForm {
-    margin: 0px 4%;
+#loginForm, #forgotForm {
+    margin: 0% 4%;
 }
 
 .form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"], .form input[type="submit"] {
@@ -221,6 +228,9 @@ body {
     float: right;
 }
 /* END Register */
+
+/* START Forgot */
+/* END Forgot */
 
 /* START modal */
 /* The Modal (background) */
