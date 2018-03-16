@@ -328,6 +328,11 @@ body {
     letter-spacing: 1px;
 }
 /*Start Profile Picture*/
-#profilepic {
+.profilepic {
+    display: block;
+    float: right;
+    width: 100px;
+    height: 100px;
+    transform: translate(-100px, -100px);
     border-radius: 50%;
 }

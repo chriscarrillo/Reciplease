@@ -1,3 +1,1 @@
-<div class = "profilepic">
-   <img src="images/testimage.jpg" width="280" height="125" title="Profile Picture" alt="Profile Picture" />
-</div>
+<img class="profilepic" src="images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />
