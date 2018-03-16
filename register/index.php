@@ -49,6 +49,10 @@
                     <option value="thai">Thai</option>
                     <option value="vietnamese">Vietnamese</option>
                 </select>
+                <div class="right">
+                    <p>upload profile picture</p>
+                    <input type="file" name="profilePicture" id="profilePicture" />
+                </div>
             </div>
             <div class="half">
                 <input type="text" id="username" name="username" placeholder="username" required /><br />
@@ -120,7 +124,7 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $dob, $dietaryRestrictions);
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $_POST["profilePicture"] $dob, $dietaryRestrictions);
             }
         ?>
     </div>

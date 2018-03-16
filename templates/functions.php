@@ -9,7 +9,7 @@
         }
     }
 
-    function register(&$fName, &$lName, &$email, &$favFood, &$username, &$password, &$dob, $dietaryRestrictions) {
+    function register(&$fName, &$lName, &$email, &$favFood, &$username, &$password, $profilePhoto, &$dob, $dietaryRestrictions) {
         $fName = ucfirst(strtolower($fName));
         $lName = ucfirst(strtolower($lName));
         $email = strtolower($email);
@@ -24,6 +24,7 @@
                 '$username',
                 '$password',
                 '$email',
+                LOAD_FILE('$profilePhoto'),
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
                 '$favFood',
                 '$dietaryRestrictionsDB',
