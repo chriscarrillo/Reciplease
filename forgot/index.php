@@ -18,7 +18,7 @@
         <h1>forgot</h1>
         <form action="" method="post" id="forgotForm" class="form">
             <h2>Enter the email address associated with your account</h2>
-            <input type="email" id="email" name="email" placeholder="email" required /><br />
+            <input type="email" id="email" name="email" placeholder="email" autofocus="on" required /><br />
             <div id="links">
                 <a href="../register" title="register">register</a>
                 <a href="../login" title="login">login</a>
