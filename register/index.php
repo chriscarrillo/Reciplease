@@ -51,7 +51,7 @@
                 </select>
                 <div class="right">
                     <p>upload profile picture</p>
-                    <input type="file" name="profilePicture" id="profilePicture" />
+                    <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
                 </div>
             </div>
             <div class="half">
