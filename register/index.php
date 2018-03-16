@@ -124,7 +124,7 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $_POST["profilePicture"] $dob, $dietaryRestrictions);
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $_POST["profilePicture"], $dob, $dietaryRestrictions);
             }
         ?>
     </div>
