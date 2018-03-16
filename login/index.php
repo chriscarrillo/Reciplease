@@ -17,8 +17,8 @@
         </div>
         <h1>log in</h1>
         <form action="" method="post" id="loginForm" class="form">
-            <input type="text" id="username" name="username" placeholder="username" /><br />
-            <input type="password" id="password" name="password" placeholder="password" /><br />
+            <input type="text" id="username" name="username" placeholder="username" autofocus="on" required /><br />
+            <input type="password" id="password" name="password" placeholder="password" required /><br />
             <div id="links">
                 <a href="../register" title="register">register</a>
                 <a href="../forgot" title="forgot username / password">forgot username / password</a>
