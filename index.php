@@ -24,10 +24,11 @@
     <form action="" method="get" id="searchForm" class="form">
             <input type="textSearch" id="search" name="search" placeholder="search" /><br />
     </form>
-
 <?php
     include "templates/profilepic.php";
+    include "templates/recipecard.php";
 ?>
+       
 <!--<h1>Reciplease</h1>-->
 </body>
 </html>

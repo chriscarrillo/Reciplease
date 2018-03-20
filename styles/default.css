@@ -327,7 +327,7 @@ body {
     font-size: 110%;
     letter-spacing: 1px;
 }
-/*Start Profile Picture*/
+/* Start Profile Picture */
 .profilepic {
     display: block;
     float: right;
@@ -336,3 +336,32 @@ body {
     transform: translate(-100px, -100px);
     border-radius: 50%;
 }
+/* End Profile Picture */
+
+/* Start Recipe Card */
+#recipecard {
+    position: absolute;
+}
+#card1 {
+    width: 47%;
+    height: 25%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: -2;
+    box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
+    top: 50%;
+    left: 2%;
+}
+#card2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: -1;
+    box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
+    left: 106%;
+}
+/* End Recipe Card */
+
