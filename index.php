@@ -20,7 +20,5 @@
     include "templates/profilepic.php";
     include "templates/recipecard.php";
 ?>
-       
-<!--<h1>Reciplease</h1>-->
 </body>
 </html>
