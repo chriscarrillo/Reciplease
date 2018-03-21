@@ -14,10 +14,29 @@
     <script src="js/infinite-scroll.pkgd.js"></script>
     <!-- see here for infinite scroll implementation - https://infinite-scroll.com/-->
 </head>  
-<body id="homePage">
+    <body id="homePage">
+        <div id="home">
+            <?php
+            include "templates/logo.php";
+            ?>
+        </div>
+        <form action="" method="get" id="searchForm" class="form">
+                <input type="textSearch" id="search" name="search" placeholder="search" /><br />
+        </form>
+        <div id="title">
+            <h1 id="title1">your recipes...</h1>
+            <h1 id="title2">prepared fresh daily</h1>
+        </div>
+        <div id="tabs">
+            <ul>
+                <li><a href="/Reciplease/index.php"><h1>home</h1></a></li>
+                <li><a href="popular/">popular</a></li>
+                <li><a href="pantry/">pantry</a></li>
+                <li><a href="profile/">profile</a></li>
+            </ul>
+        </div>
+        <img class="profilepic" src="images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />
 <?php
-    include "templates/header.php";
-    include "templates/profilepic.php";
     include "templates/recipecard.php";
 ?>
 </body>
