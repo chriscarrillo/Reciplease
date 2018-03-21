@@ -413,3 +413,10 @@ a:active {color: black;}    /* selected link */
 }
 /* End Recipe Card */
 
+/* START Profile Page */
+#profile #centerBox h1 {
+    font-size: 300%;
+    margin: 3% 0%;
+    color: #751A22;
+}
+/* END Profile Page*/
