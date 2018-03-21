@@ -327,13 +327,61 @@ body {
     font-size: 110%;
     letter-spacing: 1px;
 }
+#title {
+    display: block;
+    float: center;
+    width: 600px;
+    height: 300px;
+    margin-left: 400px;
+    margin-right: 300px;
+    font-family: 'Futura Light';
+    font-style: italic;
+    font-size: 20px;
+}
+#title1 {
+    margin-bottom: 5px;
+}
+#title2 {
+    margin-top: 5px;
+    margin-left: 200px;
+    color: #751b20;
+}
+#tabs {
+    display: block;
+    float: right;
+    width: 300px;
+    height: 300px;
+    transform: translate(-250px, -360px);
+    font-family: 'Futura';
+    text-align: right;
+}
+#tabs h1 {
+    font-size: 90px;
+    margin-bottom: 0px;
+    color: #751b20;
+}
+#tabs a {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom:0px;
+    text-decoration: none
+}
+ul {
+  list-style-type: none;
+}
+
+a:link {color: black;}      /* unvisited link */
+a:visited {color: black;}   /* visited link */
+a:hover {color: black;}     /* mouse over link */
+a:active {color: black;}    /* selected link */
+
 /* Start Profile Picture */
 .profilepic {
     display: block;
     float: right;
     width: 100px;
     height: 100px;
-    transform: translate(-100px, -100px);
+    transform: translate(220px, -300px);
     border-radius: 50%;
 }
 /* End Profile Picture */
