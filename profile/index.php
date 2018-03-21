@@ -6,6 +6,9 @@
 </head>
 <body>
 <div id="profile">
+<?php
+    include "../templates/header.php";  
+?>
 </div>
 </body>
 </html>
