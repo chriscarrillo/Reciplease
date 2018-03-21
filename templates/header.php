@@ -1,7 +1,7 @@
 <div>
     <div id="home">
         <?php
-        include "templates/logo.php";
+        include "logo.php";
         ?>
     </div>
     <form action="" method="get" id="searchForm" class="form">
@@ -14,9 +14,9 @@
     <div id="tabs">
         <ul>
             <li><h1 href="/Reciplease/index.php">home</h1></li>
-            <li><a href="#" class="w3-bar-item w3-button">popular</a></li>
-            <li><a href="#" class="w3-bar-item w3-button">pantry</a></li>
-            <li><a href="#" class="w3-bar-item w3-button">profile</a></li>
+            <li><a href="#">popular</a></li>
+            <li><a href="#">pantry</a></li>
+            <li><a href="#">profile</a></li>
         </ul>
     </div>
 </div>
