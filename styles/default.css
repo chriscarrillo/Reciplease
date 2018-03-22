@@ -419,4 +419,9 @@ a:active {color: black;}    /* selected link */
     margin: 3% 0%;
     color: #751A22;
 }
+
+#profile #centerBox {
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
 /* END Profile Page*/

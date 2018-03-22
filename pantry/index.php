@@ -24,8 +24,20 @@
     <form action="" method="get" id="searchForm" class="form">
             <input type="textSearch" id="search" name="search" placeholder="search" /><br />
     </form>
+    <div id="title">
+        <h1 id="title1">start your...</h1>
+        <h1 id="title2">food journey here</h1>
+    </div>
+    <div id="tabs">
+        <ul>
+            <li><h1>Pantry</h1></li>
+            <li><a href="../index.php">home</a></li>
+            <li><a href="../popular/">popular</a></li>
+            <li><a href="../profile/">profile</a></li>
+        </ul>
+    </div>
+    <img class="profilepic" src="../images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />;
 <?php
-    include "../templates/profilepic.php";
     include "../templates/recipecard.php";
 ?>
        
