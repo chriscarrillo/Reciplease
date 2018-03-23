@@ -4,7 +4,7 @@
     $dbPassword = "GB<YN~2zd+Cq!vAn";
     $dbName = "Reciplease";
     $dbPort = "3306";
-    $GLOBALS['db'] = new mysqli($dbServerHost, $dbUsername, $dbPassword, $dbName, $dbPort);
+    $_GLOBALS['db'] = new mysqli($dbServerHost, $dbUsername, $dbPassword, $dbName, $dbPort);
 
     function isLoggedIn() {
         if (isset($_SESSION["username"])) {
@@ -20,6 +20,8 @@
         $email = strtolower($email);
         $username = strtolower($username);
         $password = password_hash($password, PASSWORD_DEFAULT);
+        $profilePhoto = addslashes(file_get_contents($_FILES['image']['temp_name']));
+        # $profilePhotoName = addslashes($_FILES['image']['name']);
         $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
         
         $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
@@ -29,17 +31,17 @@
                 '$username',
                 '$password',
                 '$email',
-                LOAD_FILE('$profilePhoto'),
+                '{$profilePhoto}',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
                 '$favFood',
                 '$dietaryRestrictionsDB',
                 null
             )";
-        $result = mysqli_query($GLOBALS['db'], $sql);
+        $result = mysqli_query($_GLOBALS['db'], $sql);
 
             if (!$result) {
 
-            echo("Error Description: " . mysqli_error($GLOBALS['db']));
+            echo("Error Description: " . mysqli_error($_GLOBALS['db']));
 
             } else {
                 header("Location:../login");
