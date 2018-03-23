@@ -38,7 +38,7 @@
 
     // element argument can be a selector string
     //   for an individual element
-    var infScroll = new InfiniteScroll( '.recipecard', {
+    var infScroll = new InfiniteScroll('.recipecard', {
     // options
     });
 </script>
