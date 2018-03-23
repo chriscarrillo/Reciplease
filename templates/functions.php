@@ -39,7 +39,7 @@
 
             if (!$result) {
 
-            echo("Error Description: " . mysqli_error($con));
+            echo("Error Description: " . mysqli_error($db));
 
             } else {
                 header("Location:../login");
