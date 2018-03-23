@@ -4,7 +4,7 @@
     $dbPassword = "GB<YN~2zd+Cq!vAn";
     $dbName = "Reciplease";
     $dbPort = "3306";
-    $db = new mysqli($dbServerHost, $dbUsername, $dbPassword, $dbName, $dbPort);
+    $GLOBALS['db'] = new mysqli($dbServerHost, $dbUsername, $dbPassword, $dbName, $dbPort);
 
     function isLoggedIn() {
         if (isset($_SESSION["username"])) {
@@ -22,7 +22,7 @@
         $password = password_hash($password, PASSWORD_DEFAULT);
         $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
         
-        $sql = "INSERT INTO User VALUES(
+        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
                 null,
                 '$fName',
                 '$lName',
@@ -35,11 +35,11 @@
                 '$dietaryRestrictionsDB',
                 null
             )";
-        $result = mysqli_query($db, $sql);
+        $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
 
-            echo("Error Description: " . mysqli_error($db));
+            echo("Error Description: " . mysqli_error($GLOBALS['db']));
 
             } else {
                 header("Location:../login");
