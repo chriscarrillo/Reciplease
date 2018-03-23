@@ -38,9 +38,9 @@
         $result = mysqli_query($db, $sql);
 
             if (!$result) {
-?>
-            <p>There was an error during the registration.</p>
-<?php
+
+            echo("Error Description: " . mysqli_error($con));
+
             } else {
                 header("Location:../login");
             }
