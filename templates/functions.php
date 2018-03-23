@@ -20,9 +20,9 @@
         $email = strtolower($email);
         $username = strtolower($username);
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $profilePhoto = addslashes(file_get_contents($_FILES['image']['temp_name']));
+        # $profilePhoto = addslashes(file_get_contents($_FILES['profilePicture']['temp_name']));
         # $profilePhotoName = addslashes($_FILES['image']['name']);
-        $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
+        # $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
         
         $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
                 null,
@@ -34,7 +34,7 @@
                 '{$profilePhoto}',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
                 '$favFood',
-                '$dietaryRestrictionsDB',
+                '$dietaryRestrictions',
                 null
             )";
         $result = mysqli_query($_GLOBALS['db'], $sql);
