@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reciplease | Bookmarks</title>
+    <title>Reciplease | bookmarks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/png" href="../images/favicon.png" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
@@ -24,8 +24,22 @@
     <form action="" method="get" id="searchForm" class="form">
             <input type="textSearch" id="search" name="search" placeholder="search" /><br />
     </form>
+    <div id="title">
+        <h1 id="title1">start your...</h1>
+        <h1 id="title2">food journey here</h1>
+    </div>
+    <div id="tabs">
+        <ul>
+            <li><h1>bookmarks</h1></li>
+            <li><a href="../index.php">home</a></li>
+            <li><a href="../popular/">popular</a></li>
+            <li><a href="../pantry/">pantry</a></li>
+            <li><a href="../profile/">profile</a></li>
+        </ul>
+    </div>
+    <img class="profilepic" src="../images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />;
 <?php
-    include "../templates/profilepic.php";
+//    include "../templates/profilepic.php";
     include "../templates/recipecard.php";
 ?>
        

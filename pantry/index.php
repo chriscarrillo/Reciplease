@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reciplease | Pantry</title>
+    <title>Reciplease | pantry</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/png" href="../images/favicon.png" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
@@ -30,9 +30,10 @@
     </div>
     <div id="tabs">
         <ul>
-            <li><h1>Pantry</h1></li>
+            <li><h1>pantry</h1></li>
             <li><a href="../index.php">home</a></li>
             <li><a href="../popular/">popular</a></li>
+            <li><a href="../bookmark/">bookmarks</a></li>
             <li><a href="../profile/">profile</a></li>
         </ul>
     </div>
