@@ -4,6 +4,7 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $randNumber = rand(0,9999999);
+    
     //random number to be used for file name, need to check if one already exists and if it does get a new one
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -34,7 +35,7 @@
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            echo "The file ". basename($_FILES["fileToUpload"]["name"]). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
