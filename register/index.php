@@ -17,7 +17,7 @@
             ?>
         </div>
         <h1>register</h1>
-        <form action="index.php" method="post" id="registerForm" class="form">
+        <form action="index.php" method="post" id="registerForm" class="form" enctype="multipart/form-data">
             <div class="half">
                 <input type="text" id="firstName" name="firstName" placeholder="first name" autofocus="on" required /><br />
                 <input type="text" id="lastName" name="lastName" placeholder="last name" required /><br />
@@ -53,7 +53,7 @@
                     <form action = "upload.php" method="post" enctype="multipart/form-data">
                         <p>upload profile picture</p>
                         <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
-                        <input type="submit" value="Upload Image" name="submit">
+                        <!--<input type="submit" value="Upload Image" name="submit">-->
                     </form>
                 </div>
             </div>
@@ -127,7 +127,20 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $_POST["profilePicture"], $dob, $dietaryRestrictions);
+                
+                # Check if the user uploaded its own profile picture
+                if (isset($_POST["profilePhoto"])) {
+                    # If they did, then we will use the picture they uploaded
+                    $profilePhoto = addslashes(file_get_contents($_FILES['profilePicture']['temp_name']));
+                } else {
+                    # Otherwise, let's use the default picture
+                    $profilePhoto = addslashes(file_get_contents("../images/default.png"));
+                }
+                
+                # Temporary left blank until the db is fixed to store dietary restrictions
+                $dietaryRestrictions = "";
+                
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
             }
         ?>
     </div>
