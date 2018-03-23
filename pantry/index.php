@@ -37,7 +37,7 @@
             <li><a href="../profile/">profile</a></li>
         </ul>
     </div>
-    <img class="profilepic" src="../images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />;
+    <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
 <?php
     include "../templates/recipecard.php";
 ?>
