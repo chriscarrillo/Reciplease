@@ -1,5 +1,5 @@
 <?php
-    $dbServerHost = "159.65.96.119";
+    $dbServerHost = "127.0.0.1";
     $dbUsername = "application";
     $dbPassword = "GB<YN~2zd+Cq!vAn";
     $dbName = "Reciplease";
