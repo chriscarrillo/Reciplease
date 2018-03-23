@@ -1,5 +1,10 @@
 <?php
-    $db = new mysqli("", "", "", "Reciplease", "");
+    $dbServerHost = "159.65.96.119";
+    $dbUsername = "application";
+    $dbPassword = "GB<YN~2zd+Cq!vAn";
+    $dbName = "Reciplease";
+    $dbPort = "3306";
+    $db = new mysqli($dbServerHost, $dbUsername, $dbPassword, $dbName, $dbPort);
 
     function isLoggedIn() {
         if (isset($_SESSION["username"])) {

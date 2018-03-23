@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reciplease.com | Register</title>
+    <title>Reciplease.com | register</title>
     <?php include "../templates/head.php" ?>
 </head>
 <body>
