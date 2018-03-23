@@ -50,8 +50,11 @@
                     <option value="vietnamese">Vietnamese</option>
                 </select>
                 <div class="right">
-                    <p>upload profile picture</p>
-                    <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
+                    <form action = "upload.php" method="post" enctype="multipart/form-data">
+                        <p>upload profile picture</p>
+                        <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
+                        <input type="submit" value="Upload Image" name="submit">
+                    </form>
                 </div>
             </div>
             <div class="half">
