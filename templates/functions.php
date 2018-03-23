@@ -22,7 +22,7 @@
         $password = password_hash($password, PASSWORD_DEFAULT);
         $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
         
-        $sql = "INSERT INTO User VALUES(
+        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
                 null,
                 '$fName',
                 '$lName',
