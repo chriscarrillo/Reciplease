@@ -7,9 +7,9 @@ $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p
 );
 
 /*****EXAMPLE OF A SEARCH QUERY FOR POPULATING THE HOME PAGE***********************
-******VARIABLES - EXPLAINED (to be filled with user info from our DB:
+******VARIABLES - EXPLAINED (to be filled with user info from our DB):
 
-* Returns more info about recipes: "addRecipeInformation=true"
+* Returns more info about recipes (this includes instructions for prep): "addRecipeInformation=true"
 * The cuisine is american (Should we search only by this?): "cuisine=american"
 * The diet is paleo: "diet=paleo"
 * We will leave fillIngredients false: "fillIngredients=false"
