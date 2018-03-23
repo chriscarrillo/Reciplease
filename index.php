@@ -11,7 +11,7 @@
     <script type="text/javascript" src="js/kotlin.js"></script>
     <script type="text/javascript" src="js/kotlinx-html-js.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/infinite-scroll.pkgd.js"></script>
+    <script src="js/infiniteScroll.js"></script>
     <script type="text/javascript" src="js/PopupWindow.js"></script>
     <!-- see here for infinite scroll implementation - https://infinite-scroll.com/-->
 </head>  
