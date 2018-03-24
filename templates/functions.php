@@ -23,15 +23,15 @@
         
         $sql = "INSERT INTO User VALUES (
                 null,
-                '"$fNameDB"',
-                '"$lNameDB"',
-                '"$usernameDB"',
-                '"$passwordDB"',
-                '"$emailDB"',
-                '"$profilePhoto"',
+                '". $fNameDB ."',
+                '". $lNameDB ."',
+                '". $usernameDB ."',
+                '". $passwordDB ."',
+                '". $emailDB ."',
+                '". $profilePhoto ."',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
-                '"$favFood",
-                '"$dietaryRestrictions"',
+                '". $favFood .",
+                '". $dietaryRestrictions ."',
                 null
             )";
         
