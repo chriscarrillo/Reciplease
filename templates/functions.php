@@ -40,9 +40,7 @@
         $result = mysqli_query($_GLOBALS['db'], $sql);
 
             if (!$result) {
-
-            echo("Error Description: " . mysqli_error($_GLOBALS['db']));
-
+                echo("Error Description: " . mysqli_error($_GLOBALS['db']));
             } else {
                 header("Location:../login");
             }

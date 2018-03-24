@@ -122,7 +122,6 @@
         
         <?php
             if (isset($_POST["registerBtn"])) {
-                print "hello";
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
                 
                 # Check if the user uploaded its own profile picture
@@ -137,7 +136,17 @@
                 # Temporary left blank until the db is fixed to store dietary restrictions
                 $dietaryRestrictions = "";
                 
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
+                # Test the form
+                print "First Name: " . $_POST["firstName"] . "\n";
+                print "Last Name: " . $_POST["lastName"] . "\n";
+                print "Email: " . $_POST["email"] . "\n";
+                print "Favorite Food: " . $_POST["favoriteFood"] . "\n";
+                print "Profile Picture: " . $_POST["profilePicture"] . "\n";
+                print "Username: " . $_POST["username"] . "\n";
+                print "Password: " . $_POST["password"] . "\n";
+                print "DOB: " . $dob . "\n";
+                print "Dietary Restrictions: " . $dietaryRestrictions . "\n";
+                # register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
             }
         ?>
     </div>
