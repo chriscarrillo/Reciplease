@@ -37,10 +37,17 @@
                 '$dietaryRestrictions',
                 null
             )";
+        
+        if ($GLOBALS['db']->connect_error) {
+            die("Connection Error(" . $GLOBALS['db']->connect_errno . ")" . $GLOBALS['db']->connect_error);
+        } else {
+            echo "Successful connection to the database";
+        }
+        
         $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
-                echo "Error Description: " . mysqli_error($sql);
+                echo "Error Description: " . mysqli_error($GLOBALS['db']);
             } else {
                 header("Location:../login");
             }
