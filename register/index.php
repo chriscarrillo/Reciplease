@@ -50,11 +50,8 @@
                     <option value="vietnamese">Vietnamese</option>
                 </select>
                 <div class="right">
-                    <form action = "upload.php" method="post" enctype="multipart/form-data">
-                        <p>upload profile picture</p>
-                        <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
-                        <!--<input type="submit" value="Upload Image" name="submit">-->
-                    </form>
+                    <p>upload profile picture</p>
+                    <input type="file" name="profilePicture" id="profilePicture" accept="image/*" />
                 </div>
             </div>
             <div class="half">
@@ -80,7 +77,6 @@
                         <?php
                             for ($i = 1; $i <= 31; $i++) {
                         ?>
-
                         <option value="
                             <?php
                                     ($i < 10) ? print 0 . $i : print $i;
@@ -126,6 +122,7 @@
         
         <?php
             if (isset($_POST["registerBtn"])) {
+                print "hello";
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
                 
                 # Check if the user uploaded its own profile picture
