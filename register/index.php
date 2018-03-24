@@ -99,7 +99,7 @@
                 </div>
                 <div class="clear">
                     <div id="dietaryRestrctionsCheckboxes">
-                        <p>Dietary Restrictions:</p>
+                        <p>dietary restrictions:</p>
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="lacto vegetarian"> Lacto Vegetarian</label><br />
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="ovo vegetarian"> Ovo Vegetarian</label><br />
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="pescetarian"> Pescetarian</label><br />
@@ -131,15 +131,15 @@
                 $dietaryRestrictions = "";
                 
                 # Test the form
-                print "First Name: " . $_POST["firstName"] . "\n";
-                print "Last Name: " . $_POST["lastName"] . "\n";
-                print "Email: " . $_POST["email"] . "\n";
-                print "Favorite Food: " . $_POST["favoriteFood"] . "\n";
+                #print "First Name: " . $_POST["firstName"] . "\n";
+                #print "Last Name: " . $_POST["lastName"] . "\n";
+                #print "Email: " . $_POST["email"] . "\n";
+                #print "Favorite Food: " . $_POST["favoriteFood"] . "\n";
                 #print "Profile Picture: " . $profilePhoto . "\n";
-                print "Username: " . $_POST["username"] . "\n";
-                print "Password: " . $_POST["password"] . "\n";
-                print "DOB: " . $dob . "\n";
-                print "Dietary Restrictions: " . $dietaryRestrictions . "\n";
+                #print "Username: " . $_POST["username"] . "\n";
+                #print "Password: " . $_POST["password"] . "\n";
+                #print "DOB: " . $dob . "\n";
+                #print "Dietary Restrictions: " . $dietaryRestrictions . "\n";
                 register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
             }
         ?>
