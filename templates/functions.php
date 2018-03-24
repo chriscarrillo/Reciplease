@@ -14,7 +14,7 @@
         }
     }
 
-    function register(&$fName, &$lName, &$email, &$favFood, &$username, &$password, $profilePhoto, &$dob, $dietaryRestrictions) {
+    function register(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestrictions) {
         $fNameDB = ucfirst(strtolower($fName));
         $lNameDB = ucfirst(strtolower($lName));
         $emailDB = strtolower($email);
@@ -38,7 +38,8 @@
         $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
-                echo "Error: " . mysqli_error($GLOBALS['db']);
+                print $fNameDb . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . "<br />";
+                print "Error: " . mysqli_error($GLOBALS['db']);
             } else {
                 header("Location:../login");
             }
