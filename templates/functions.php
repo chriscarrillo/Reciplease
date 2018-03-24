@@ -21,7 +21,7 @@
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
         
-        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
+        $sql = "INSERT INTO User VALUES (
                 null,
                 '$fNameDB',
                 '$lNameDB',
@@ -38,7 +38,7 @@
         $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
-                print $fNameDb . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . "<br />";
+                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . "<br />";
                 print "Error: " . mysqli_error($GLOBALS['db']);
             } else {
                 header("Location:../login");
