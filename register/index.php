@@ -17,7 +17,7 @@
             ?>
         </div>
         <h1>register</h1>
-        <form action="index.php" method="post" id="registerForm" class="form" enctype="multipart/form-data">
+        <form method="post" id="registerForm" class="form" enctype="multipart/form-data">
             <div class="half">
                 <input type="text" id="firstName" name="firstName" placeholder="first name" autofocus="on" required /><br />
                 <input type="text" id="lastName" name="lastName" placeholder="last name" required /><br />
@@ -77,11 +77,8 @@
                         <?php
                             for ($i = 1; $i <= 31; $i++) {
                         ?>
-                        <option value="
-                            <?php
-                                    ($i < 10) ? print 0 . $i : print $i;
-                            ?>
-                            "><?php ($i < 10) ? print 0 . $i : print $i; ?>
+                        <option value="<?php ($i < 10) ? print 0 . $i : print $i; ?>">
+                            <?php ($i < 10) ? print 0 . $i : print $i; ?>
                         </option>
                         <?php
                             }
@@ -92,11 +89,8 @@
                             for ($i = date('Y'); $i >= (int) date('Y') - 100; $i--) {
                         ?>
 
-                        <option value="
-                            <?php
-                                    print $i;
-                            ?>
-                            "><?php print $i; ?>
+                        <option value="<?php print $i; ?>">
+                            <?php print $i; ?>
                         </option>
                         <?php
                             }
@@ -141,7 +135,7 @@
                 print "Last Name: " . $_POST["lastName"] . "\n";
                 print "Email: " . $_POST["email"] . "\n";
                 print "Favorite Food: " . $_POST["favoriteFood"] . "\n";
-                print "Profile Picture: " . $_POST["profilePicture"] . "\n";
+                #print "Profile Picture: " . $profilePhoto . "\n";
                 print "Username: " . $_POST["username"] . "\n";
                 print "Password: " . $_POST["password"] . "\n";
                 print "DOB: " . $dob . "\n";
