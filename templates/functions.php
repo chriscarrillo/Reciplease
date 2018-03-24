@@ -20,9 +20,6 @@
         $emailDB = strtolower($email);
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
-        # $profilePhoto = addslashes(file_get_contents($_FILES['profilePicture']['temp_name']));
-        # $profilePhotoName = addslashes($_FILES['image']['name']);
-        # $dietaryRestrictionsDB = implode(", ", $dietaryRestrictions);
         
         $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions, DateRegistered) VALUES(
                 null,
@@ -33,21 +30,15 @@
                 '$emailDB',
                 '{$profilePhoto}',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
-                '$favFood$dietaryRestrictions
+                '$favFood,
                 '$dietaryRestrictions',
                 null
             )";
         
-        if ($GLOBALS['db']->connect_error) {
-            die("Connection Error(" . $GLOBALS['db']->connect_errno . ")" . $GLOBALS['db']->connect_error);
-        } else {
-            echo "Successful connection to the database";
-        }
-        
         $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
-                echo "Error Description: " . mysqli_error($GLOBALS['db']);
+                echo "Error: " . mysqli_error($GLOBALS['db']);
             } else {
                 header("Location:../login");
             }
