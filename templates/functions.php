@@ -37,11 +37,11 @@
             echo "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
         
-        if ($stmt) {
-            header("Location:../login");
+        if (!$stmt) {
+            echo $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
+            echo "Error: " . mysqli_error($GLOBALS['db']);
         } else {
-            print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
-            print "Error: " . mysqli_error($GLOBALS['db']);
+            header("Location:../login");
         }
         
         
