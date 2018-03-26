@@ -32,9 +32,7 @@
                 '". $profilePhoto ."',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
                 '". $favFood .",
-                '". $dietaryRestrictions ."','"
-                . $dateRegistered . 
-            "')";
+                '". $dietaryRestrictions ."')";
         
         $result = mysqli_query($GLOBALS['db'], $sql);
 
