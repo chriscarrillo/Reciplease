@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $dbServerHost = "127.0.0.1";
     $dbUsername = "application";
     $dbPassword = "GB<YN~2zd+Cq!vAn";
@@ -15,32 +16,55 @@
     }
 
     function register(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestrictions) {
+        
+        
         $fNameDB = ucfirst(strtolower($fName));
         $lNameDB = ucfirst(strtolower($lName));
         $emailDB = strtolower($email);
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
-        $dateRegistered = date("Y/m/d");
+        $dobDB = STR_TO_DATE('$dob', '%Y-%m-%d');
         
-        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions)VALUES (
-                null,
-                '". $fNameDB ."',
-                '". $lNameDB ."',
-                '". $usernameDB ."',
-                '". $passwordDB ."',
-                '". $emailDB ."',
-                '". $profilePhoto ."',
-                STR_TO_DATE('$dob', '%Y-%m-%d'),
-                '". $favFood ."',
-                '". $dietaryRestrictions ."')";
+        if (!($stmt = $conn->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
+            echo "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        }
         
-        $result = mysqli_query($GLOBALS['db'], $sql);
+        if (!$stmt->bind_param("sssssbsss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, $dietaryRestrictions)){
+            echo "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        
+        if ($stmt->execute()) {
+            echo "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+        }
+        
+        if ($stmt) {
+            header("Location:../login");
+        } else {
+            print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
+            print "Error: " . mysqli_error($GLOBALS['db']);
+        }
+        
+        
+//        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions)VALUES (
+//                null,
+//                '". $fNameDB ."',
+//                '". $lNameDB ."',
+//                '". $usernameDB ."',
+//                '". $passwordDB ."',
+//                '". $emailDB ."',
+//                '". $profilePhoto ."',
+//                STR_TO_DATE('$dob', '%Y-%m-%d'),
+//                '". $favFood ."',
+//                '". $dietaryRestrictions ."')";
+//        
+//        $result = mysqli_query($GLOBALS['db'], $sql);
 
-            if (!$result) {
-                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
-                print "Error: " . mysqli_error($GLOBALS['db']);
-            } else {
-                header("Location:../login");
-            }
+//            if (!$result) {
+//                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
+//                print "Error: " . mysqli_error($GLOBALS['db']);
+//            } else {
+//                header("Location:../login");
+//            }
+        $mysqli->close();
     }
 ?>
