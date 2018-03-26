@@ -31,7 +31,7 @@
                 '". $emailDB ."',
                 '". $profilePhoto ."',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
-                '". $favFood .",
+                '". $favFood ."',
                 '". $dietaryRestrictions ."')";
         
         $result = mysqli_query($GLOBALS['db'], $sql);
