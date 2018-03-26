@@ -22,7 +22,7 @@
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
         $dateRegistered = date("Y/m/d");
         
-        $sql = "INSERT INTO User VALUES (
+        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions)VALUES (
                 null,
                 '". $fNameDB ."',
                 '". $lNameDB ."',
