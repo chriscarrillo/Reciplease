@@ -128,7 +128,7 @@
                 }
                 
                 # Temporary left blank until the db is fixed to store dietary restrictions
-                $dietaryRestrictions = "";
+                $dietaryRestrictions = " ";
                 
                 # Test the form
                 #print "First Name: " . $_POST["firstName"] . "\n";
