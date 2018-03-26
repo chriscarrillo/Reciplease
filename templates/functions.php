@@ -20,6 +20,7 @@
         $emailDB = strtolower($email);
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
+        $dateRegistered = date("Y/m/d");
         
         $sql = "INSERT INTO User VALUES (
                 null,
@@ -31,9 +32,9 @@
                 '". $profilePhoto ."',
                 STR_TO_DATE('$dob', '%Y-%m-%d'),
                 '". $favFood .",
-                '". $dietaryRestrictions ."',
-                null
-            )";
+                '". $dietaryRestrictions ."','"
+                . $dateRegistered . 
+            "')";
         
         $result = mysqli_query($GLOBALS['db'], $sql);
 
