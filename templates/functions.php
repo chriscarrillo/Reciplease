@@ -38,7 +38,7 @@
         $result = mysqli_query($GLOBALS['db'], $sql);
 
             if (!$result) {
-                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . "<br />";
+                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
                 print "Error: " . mysqli_error($GLOBALS['db']);
             } else {
                 header("Location:../login");
