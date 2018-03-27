@@ -62,7 +62,7 @@
                 print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
                 print "Error: " . mysqli_error($GLOBALS['db']);
             } else {
-                header("Location: ../login/index.php");
+                header('Location: ../login/index.php');
             }
     }
 ?>
