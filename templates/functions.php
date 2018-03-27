@@ -37,7 +37,7 @@
         if (password_verify($password, $row['Password'])){
             session_start();
             $_SESSION['username'] = $username;
-            print "<script type='text/javascript'>window.top.location='../';</script>";
+            print "<script type='text/javascript'>window.top.location='..';</script>";
         } else {
             print "Login Failed: (" . $stmt->errno .")" . $stmt->error;
             exit;
