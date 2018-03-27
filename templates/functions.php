@@ -23,7 +23,6 @@
         $emailDB = strtolower($email);
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
-        #$dobDB = STR_TO_DATE('$dob', '%Y-%m-%d');
         $dobDB = date("Y-m-d", strtotime($dob));
         
         /*if (!($stmt = $conn->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
@@ -63,7 +62,7 @@
                 print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
                 print "Error: " . mysqli_error($GLOBALS['db']);
             } else {
-                header("Location:../login");
+                header("Location: ../login/index.php");
             }
     }
 ?>
