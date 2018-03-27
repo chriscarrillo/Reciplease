@@ -5,6 +5,7 @@
     <?php include "../templates/head.php" ?>
 </head>
 <body>
+<?php include "../templates/functions.php" ?>
 <div id="login">
     <div id="redBox">
         <div id="circle"></div>

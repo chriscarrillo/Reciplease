@@ -17,14 +17,14 @@
 
     function login($username, $password) {        
         if (!($stmt = $GLOBALS['db']->prepare("SELECT UserName, Password FROM User WHERE UserName = ?"))){
-            print "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
         }
         
-        if(!$stmt->bind_param('s', $username)){
+        if (!$stmt->bind_param('s', $username)){
             print "Bind failed: (" . $stmt->errno . ")" . $stmt->error;
         }
 
-        if(!$stmt->execute()){
+        if (!$stmt->execute()){
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
 
@@ -34,7 +34,7 @@
         $stmt->bind_result($username, $password);
         $stmt->store_result();
 
-        if(password_verify($password, $row['Password'])){
+        if (password_verify($password, $row['Password'])){
             session_start();
             $_SESSION['username'] = $username;
             print "<script type='text/javascript'>window.top.location='../';</script>";
