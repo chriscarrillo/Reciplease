@@ -16,7 +16,7 @@
     }
 
     function login($username, $password) {        
-        if (!($stmt = $mysqli->prepare("SELECT UserName, Password FROM User WHERE UserName = ?"))){
+        if (!($stmt = $GLOBALS['db']->prepare("SELECT UserName, Password FROM User WHERE UserName = ?"))){
             print "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
         }
         
