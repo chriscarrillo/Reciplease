@@ -23,7 +23,8 @@
         $emailDB = strtolower($email);
         $usernameDB = strtolower($username);
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
-        $dobDB = STR_TO_DATE('$dob', '%Y-%m-%d');
+        #$dobDB = STR_TO_DATE('$dob', '%Y-%m-%d');
+        $dobDB = date("Y-m-d", strtotime($dob));
         
         /*if (!($stmt = $conn->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
             echo "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
@@ -52,7 +53,7 @@
                 '". $passwordDB ."',
                 '". $emailDB ."',
                 '". $profilePhoto ."',
-                STR_TO_DATE('$dob', '%Y-%m-%d'),
+                '". $dobDB . "',
                 '". $favFood ."',
                 '". $dietaryRestrictions ."')";
         
