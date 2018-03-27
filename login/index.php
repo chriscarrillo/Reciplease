@@ -25,6 +25,11 @@
             </div>
             <input type="submit" id="loginBtn" class="button" name="loginBtn" value="submit" />
         </form>
+        <?php
+            if (isset($_POST["loginBtn"])) {
+                login($_POST["username"], $_POST["password"]);
+            }
+        ?>
     </div>
 </div>
 </body>
