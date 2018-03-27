@@ -25,7 +25,7 @@
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
         $dobDB = STR_TO_DATE('$dob', '%Y-%m-%d');
         
-        if (!($stmt = $conn->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
+        /*if (!($stmt = $conn->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
             echo "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
         }
         
@@ -43,28 +43,26 @@
             print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
             print "Error: " . mysqli_error($GLOBALS['db']);
         }
+        */
         
+        $sql = "INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (
+                '". $fNameDB ."',
+                '". $lNameDB ."',
+                '". $usernameDB ."',
+                '". $passwordDB ."',
+                '". $emailDB ."',
+                '". $profilePhoto ."',
+                STR_TO_DATE('$dob', '%Y-%m-%d'),
+                '". $favFood ."',
+                '". $dietaryRestrictions ."')";
         
-//        $sql = "INSERT INTO User (UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions)VALUES (
-//                null,
-//                '". $fNameDB ."',
-//                '". $lNameDB ."',
-//                '". $usernameDB ."',
-//                '". $passwordDB ."',
-//                '". $emailDB ."',
-//                '". $profilePhoto ."',
-//                STR_TO_DATE('$dob', '%Y-%m-%d'),
-//                '". $favFood ."',
-//                '". $dietaryRestrictions ."')";
-//        
-//        $result = mysqli_query($GLOBALS['db'], $sql);
+        $result = mysqli_query($GLOBALS['db'], $sql);
 
-//            if (!$result) {
-//                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
-//                print "Error: " . mysqli_error($GLOBALS['db']);
-//            } else {
-//                header("Location:../login");
-//            }
-        $mysqli->close();
+            if (!$result) {
+                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
+                print "Error: " . mysqli_error($GLOBALS['db']);
+            } else {
+                header("Location:../login");
+            }
     }
 ?>
