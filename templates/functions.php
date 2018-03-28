@@ -42,18 +42,6 @@
             print "Login Failed: (" . $stmt->errno .")" . $stmt->error;
             exit;
         }
-        /*$sql = "SELECT Password FROM User WHERE UserName = '" . $username . "'";
-        $result = mysqli_query($GLOBALS['db'], $sql);
-        
-        if (!$result) {
-            print "That username does not exist";
-        } else {
-            if ($result == $passwordDB) {
-                print "<script type='text/javascript'>window.top.location='../';</script>";
-            } else {
-                print "Wrong password";
-            }
-        }*/
     }
 
     function register(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestrictions) {
@@ -83,26 +71,5 @@
             print "<script type='text/javascript'>window.top.location='../login';</script>";
             exit;
         }
-        
-//        $sql = "INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (
-//                '". $fNameDB ."',
-//                '". $lNameDB ."',
-//                '". $usernameDB ."',
-//                '". $passwordDB ."',
-//                '". $emailDB ."',
-//                '". $profilePhoto ."',
-//                '". $dobDB . "',
-//                '". $favFood ."',
-//                '". $dietaryRestrictions ."')";
-//        
-//        $result = mysqli_query($GLOBALS['db'], $sql);
-//
-//            if (!$result) {
-//                print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
-//                print "Error: " . mysqli_error($GLOBALS['db']);
-//            } else {
-//                print "<script type='text/javascript'>window.top.location='../login';</script>";
-//                exit;
-//            }
     }
 ?>
