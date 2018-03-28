@@ -53,14 +53,14 @@
         $dobDB = date("Y-m-d", strtotime($dob));
         
         if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
-            print "Prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         
         if (!$stmt->bind_param("sssssbsss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, $dietaryRestrictions)){
             print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         
-        if ($stmt->execute()) {
+        if (!$stmt->execute()) {
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
         
