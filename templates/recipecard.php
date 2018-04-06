@@ -3,7 +3,7 @@
 
 <div class="recipecard">
     <div id="card1">
-        <button id="myBtn">View Recipe</button>
+        <button id="myBtn" onclick="popup()">View Recipe</button>
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
@@ -15,7 +15,7 @@
     </div>    
     
     <div id ="card2">
-        <button id="myBtn">View Recipe</button>
+        <button id="myBtn" onclick="popup()">View Recipe</button>
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
