@@ -1,8 +1,9 @@
 <script type="text/javascript" src="../js/PopupWindow.js"></script>
 <script src="../js/infiniteScroll.js"></script>
 
+<body onload="popup()">
 <div class="recipecard">
-    <div id="card1" onload="popup()">
+    <div id="card1">
         <button id="myBtn">View Recipe</button>
         <div id="myModal" class="modal">
 
@@ -14,7 +15,7 @@
         </div>  
     </div>    
     
-    <div id ="card2" onload="popup()">
+    <div id ="card2">
         <button id="myBtn">View Recipe</button>
         <div id="myModal" class="modal">
 
@@ -26,6 +27,7 @@
         </div>  
     </div>
 </div>
+</body>
 
 <script>
     var elem = document.querySelector('.recipecard');
