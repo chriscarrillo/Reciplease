@@ -15,7 +15,7 @@
     <script type="text/javascript" src="js/PopupWindow.js"></script>
     <!-- see here for infinite scroll implementation - https://infinite-scroll.com/-->
 </head>  
-    <body id="homePage" onload="popup()">
+    <body id="homePage">
         <div id="home">
             <?php
             include "templates/logo.php";
