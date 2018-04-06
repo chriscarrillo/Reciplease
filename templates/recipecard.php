@@ -1,4 +1,4 @@
-<script type="text/javascript" src="js/PopupWindow.js"></script>
+<script type="text/javascript" src="../js/PopupWindow.js"></script>
 <script src="../js/infiniteScroll.js"></script>
 
 <div class="recipecard">
