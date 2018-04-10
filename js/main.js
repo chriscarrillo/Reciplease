@@ -4,3 +4,10 @@ $(document).ready(function() {
         $("#redBox").css("opacity", "1");
     }
 });
+
+$('.container').infiniteScroll({
+  // options
+  path: '.pagination__next',
+  append: '.post',
+  history: false,
+});
