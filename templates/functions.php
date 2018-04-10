@@ -52,7 +52,7 @@
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
         $dobDB = date("Y-m-d", strtotime($dob));
         
-        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
+        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         
