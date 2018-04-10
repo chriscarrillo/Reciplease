@@ -23,7 +23,7 @@
                 <input type="text" id="lastName" name="lastName" placeholder="last name" required /><br />
                 <input type="email" id="email" name="email" placeholder="email" required /><br />
                 <select id="favoriteFoodSelection" name="favoriteFood">
-                    <option value="">Favorite Type of Food:</option>
+                    <option value="" hidden>Favorite Type of Food:</option>
                     <option value="african">African</option>
                     <option value="american">American</option>
                     <option value="british">British</option>
@@ -131,7 +131,7 @@
                 // Populate the array with dietary restrictions if they have any
                 if (!empty($_POST["dietaryRestrictions"])) {
                     foreach ($_POST["dietaryRestrictions"] as $restriction) {
-                    array_push($dietaryRestrictions, $restriction);
+                        array_push($dietaryRestrictions, $restriction);
                     }
                 }
                 
