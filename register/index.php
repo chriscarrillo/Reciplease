@@ -117,18 +117,24 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
+                $dietaryRestrictions = array();
                 
-                # Check if the user uploaded its own profile picture
+                // Check if the user uploaded its own profile picture
                 if (isset($_POST["profilePhoto"])) {
-                    # If they did, then we will use the picture they uploaded
+                    // If they did, then we will use the picture they uploaded
                     $profilePhoto = addslashes(file_get_contents($_FILES['profilePicture']['temp_name']));
                 } else {
-                    # Otherwise, let's use the default picture
+                    // Otherwise, let's use the default picture
                     $profilePhoto = addslashes(file_get_contents("../images/default.png"));
                 }
                 
-                # Temporary left blank until the db is fixed to store dietary restrictions
-                $dietaryRestrictions = " ";
+                // Populate the array with dietary restrictions if they have any
+                if (!empty($_POST["dietaryRestrictions"])) {
+                    foreach ($_POST["dietaryRestrictions"] as $restriction) {
+                    array_push($dietaryRestrictions, $restriction);
+                    }
+                }
+                
                 register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
             }
         ?>
