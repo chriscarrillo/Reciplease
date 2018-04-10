@@ -52,17 +52,21 @@
         $passwordDB = password_hash($password, PASSWORD_DEFAULT);
         $dobDB = date("Y-m-d", strtotime($dob));
         
-        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DietaryRestrictions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
+        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO User (FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         
-        if (!$stmt->bind_param("sssssbsss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, $dietaryRestrictions)){
+        if (!$stmt->bind_param("sssssbsss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood)){
             print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         
         if (!$stmt->execute()) {
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
+        
+        $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, $dietaryRestriction from User where Username = $usernamedb";
+        
+        $GLOBALS['db']->query($registerStmt);
         
         if (!$stmt) {
             print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
