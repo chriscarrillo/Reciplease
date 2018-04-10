@@ -56,7 +56,7 @@
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         
-        if (!$stmt->bind_param("sssssbsss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood)){
+        if (!$stmt->bind_param("sssssbss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood)){
             print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         
