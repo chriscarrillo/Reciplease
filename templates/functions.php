@@ -64,9 +64,10 @@
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
         
-        $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, $dietaryRestriction from User where Username = $usernamedb";
-        
-        $GLOBALS['db']->query($registerStmt);
+        for ($i = 0; $i <= count($dietaryRestrictions); $i++) {
+            $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, '".$dietaryRestriction[i]."' from User where Username = $usernamedb";
+            $GLOBALS['db']->query($registerStmt);
+        }
         
         if (!$stmt) {
             print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
