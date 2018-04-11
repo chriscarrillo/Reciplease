@@ -19,7 +19,13 @@
         <div id="home">
             <?php
             include "templates/logo.php";
+            
+                $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=20&offset=0&ranking=1",
+                array("X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR","Accept" => "application/json"));
+            
+                echo $response;
             ?>
+            
         </div>
         <form action="" method="get" id="searchForm" class="form">
                 <input type="textSearch" id="search" name="search" placeholder="search" /><br />
