@@ -65,7 +65,7 @@
         }
         
         for ($i = 0; $i <= count($dietaryRestrictions); $i++) {
-            $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, '".$dietaryRestriction[i]."' from User where Username = '".$usernamedb."'";
+            $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, '".$dietaryRestrictions[i]."' from User where Username = '".$usernamedb."'";
             $GLOBALS['db']->query($registerStmt);
         }
         
