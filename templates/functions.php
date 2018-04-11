@@ -67,7 +67,7 @@
         for ($i = 0; $i <= count($dietaryRestrictions); $i++) {
             $registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, '".$dietaryRestrictions[$i]."' from User where Username = '".$usernameDB."'";
 //            $GLOBALS['db']->query($registerStmt);
-            $result = mysql_query($registerStmt);
+            $result = mysqli_query($GLOBALS['db'], $registerStmt);
             if (!result) {
                 $message  = 'Invalid query: ' . mysql_error() . "\n";
                 $message .= 'Whole query: ' . $registerStmt;
