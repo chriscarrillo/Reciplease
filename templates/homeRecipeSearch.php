@@ -1,8 +1,10 @@
+<!--
 <!DOCTYPE html> 
 <html>
     <body>
+-->
         <?php
-        include '../unirest/src/Unirest.php';    
+        include 'unirest/src/Unirest.php';    
     
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=false&limitLicense=false&number=2&offset=0&ranking=1",
             array(
@@ -10,9 +12,9 @@
                 "Accept" => "application/json"
                 ));
         
-            if ($response != NULL){
-                echo "Successful API call.";
-            }
+//            if ($response != NULL){
+//                echo "Successful API call.";
+//            }
            
         
        // echo $response->raw_body; // Print raw response
@@ -29,20 +31,14 @@
         $title1=$body->results[1]->title;
         
         
-        echo $url;
-        echo $image;
-        echo $title;
+//        echo $url;
+//        echo $image;
+//        echo $title;
+//            
+//        echo $url1;
+//        echo $image1;
+//        echo $title1;
             
-        echo $url1;
-        echo $image1;
-        echo $title1;
-            
-            
-        
-        
-        
-
-        
 /*****EXAMPLE OF A SEARCH QUERY FOR POPULATING THE HOME PAGE***********************
 ******VARIABLES - EXPLAINED (to be filled with user info from our DB):
 
@@ -58,5 +54,7 @@
 ***********************************************************************************/
 
 ?>
+<!--
     </body>
 </html>
+-->
