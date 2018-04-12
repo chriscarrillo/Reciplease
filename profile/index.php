@@ -32,6 +32,13 @@
                     <li><a href="../index.php">home</a></li>
                     <li><a href="../pantry/">pantry</a></li>
                     <li><a href="../popular/">popular</a></li>
+                    <?php
+                        if (isLoggedIn()) {
+                    ?>
+                    <li><a href="../logout.php">logout</a></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
