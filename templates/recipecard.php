@@ -5,9 +5,9 @@
     <?php include "homeRecipeSearch.php" ?>
     <div id="card1">
         <button id="myBtn" onclick="popup()">View Recipe</button>
-        <h3><?php echo $title ?></h3>
+        <h2><?php echo $title ?></h2>
         <a href="<?php echo $url ?>">Visit Recipe</a>
-        <img src="<?php echo $image ?>" height="42" width="42">
+        <img src="<?php echo $image ?>" height="120" width="120" align="right">
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
@@ -19,9 +19,9 @@
     
     <div id ="card2">
         <button id="myBtn" onclick="popup()">View Recipe</button>
-        <h3><?php echo $title1 ?></h3>
+        <h2><?php echo $title1 ?></h2>
         <a href="<?php echo $url1 ?>">Visit Recipe</a>
-        <img src="<?php echo $image1 ?>" height="42" width="42">
+        <img src="<?php echo $image1 ?>" height="120" width="120" align="right">
         <h1><?php $title1 ?></h1>
         <div id="myModal" class="modal">
             
