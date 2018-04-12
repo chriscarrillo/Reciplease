@@ -28,7 +28,7 @@
             </div>
             <div id="tabs">
                 <ul>
-                    <li><h1><?= $_SESSION["firstName"] ?></h1></li>
+                    <li><h1><?= print $_SESSION["firstName"] ?></h1></li>
                     <li><a href="../index.php">home</a></li>
                     <li><a href="../pantry/">pantry</a></li>
                     <li><a href="../popular/">popular</a></li>
@@ -37,13 +37,13 @@
         </div>
         <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
         <div id="centerBox" class="centered">
-            <h1><?= $_SESSION["firstName"] ?>'s profile</h1>
+            <h1><?= print $_SESSION["firstName"] ?>'s profile</h1>
             <form action="" method="post" id="profileForm" class="form">
-                <input type="text" id="firstName" name="firstName" placeholder="first name" /><br /> <!-- The placeholder should be the name in the db -->
-                <input type="text" id="lastName" name="lastName" placeholder="last name" /><br /> <!-- The placeholder should be the name in the db -->
-                <input type="text" id="username" name="username" placeholder="username" /><br />
-                <input type="password" id="password" name="password" placeholder="password" /><br />
-                <input type="email" id="email" name="email" placeholder="email" /><br />
+                <input type="text" id="firstName" name="firstName" value="<?= print $_SESSION["firstName"] ?>" placeholder="first name" required /><br />
+                <input type="text" id="lastName" name="lastName" value="<?= print $_SESSION["lastName"] ?>" placeholder="last name" required /><br />
+                <input type="text" id="username" name="username" value="<?= print $_SESSION["username"] ?>" placeholder="username" required /><br />
+                <input type="password" id="password" name="password" placeholder="password" required /><br />
+                <input type="email" id="email" name="email" value="<?= print $_SESSION["email"] ?>" placeholder="email" required /><br />
                 <div class="right">
                     <input type="file" id="profilePicture" name="profilePicture" /><br />
                     <p>date of birth</p>
@@ -93,7 +93,7 @@
                     </select>
                     <div class="clear">
                     <div id="dietaryRestrctionsCheckboxes">
-                        <p>Dietary Restrictions:</p>
+                        <p>dietary restrictions:</p>
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="lacto vegetarian"> Lacto Vegetarian</label><br />
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="ovo vegetarian"> Ovo Vegetarian</label><br />
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="pescetarian"> Pescetarian</label><br />
