@@ -16,7 +16,7 @@
     }
 
     function login($username, $password) {        
-        if (!($stmt = $GLOBALS['db']->prepare("SELECT UserName, Password FROM User WHERE UserName = ?"))){
+        if (!($stmt = $GLOBALS['db']->prepare("SELECT * FROM User WHERE UserName = ?"))){
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
         }
         
@@ -31,12 +31,19 @@
         $userdata = $stmt->get_result();
         $row = $userdata->fetch_array(MYSQLI_ASSOC);
 
-        $stmt->bind_result($username, $password);
+        $stmt->bind_result($id, $firstName, $lastName, $username, $password, $email, $profilePicture, $dob, $favoriteFood, $dateRegistered);
         $stmt->store_result();
 
         if (password_verify($password, $row['Password'])){
-            session_start();
-            $_SESSION['username'] = $username;
+            $_SESSION["id"] = $id;
+            $_SESSION["firstName"] = $firstName;
+            $_SESSION["lastName"] = $lastName;
+            $_SESSION["username"] = $username;
+            $_SESSION["email"] = $email;
+            $_SESSION["profilePicture"] = $profilePicture;
+            $_SESSION["dob"] = $dob;
+            $_SESSION["favoriteFood"] = $favoriteFood;
+            $_SESSION["dateRegistered"] = $dateRegistered;
             print "<script type='text/javascript'>window.top.location='..';</script>";
         } else {
             print "Login Failed: (" . $stmt->errno .")" . $stmt->error;

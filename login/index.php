@@ -13,7 +13,13 @@
     <div id="centerBox" class="centered">
         <div id="logo">
             <?php
-            include "../templates/logo.php";
+                session_start();
+
+                if (isLoggedIn()) {
+                    header("Location: ..");
+                }
+
+                include "../templates/logo.php";
             ?>
         </div>
         <h1>log in</h1>

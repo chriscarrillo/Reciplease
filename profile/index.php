@@ -5,11 +5,18 @@
     <?php include "../templates/head.php" ?>
 </head>
 <body id="homePage">
+<?php include "../templates/functions.php" ?>
     <div id="profile">
         <div>
             <div id="home">
                 <?php
-                include "../templates/logo.php";
+                    session_start();
+                    
+                    if (!isLoggedIn()) {
+                        header("Location: ..");
+                    }
+    
+                    include "../templates/logo.php";
                 ?>
             </div>
             <form action="" method="get" id="searchForm" class="form">
@@ -21,7 +28,7 @@
             </div>
             <div id="tabs">
                 <ul>
-                    <li><h1>curtis</h1></li>
+                    <li><h1><?= $_SESSION["firstName"] ?></h1></li>
                     <li><a href="../index.php">home</a></li>
                     <li><a href="../pantry/">pantry</a></li>
                     <li><a href="../popular/">popular</a></li>
@@ -30,7 +37,7 @@
         </div>
         <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
         <div id="centerBox" class="centered">
-            <h1>curtis's profile</h1>
+            <h1><?= $_SESSION["firstName"] ?>'s profile</h1>
             <form action="" method="post" id="profileForm" class="form">
                 <input type="text" id="firstName" name="firstName" placeholder="first name" /><br /> <!-- The placeholder should be the name in the db -->
                 <input type="text" id="lastName" name="lastName" placeholder="last name" /><br /> <!-- The placeholder should be the name in the db -->
