@@ -1,11 +1,20 @@
-<?php
-$response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=20&offset=0&ranking=1",
-  array(
-    "X-Mashape-Key" => "pG1EhFzPKWmshl1PQv6erBmJyp3Mp1JYtsCjsnwX95URxP3vYD",
-    "Accept" => "application/json"
-  )
-);
-
+<!DOCTYPE html> 
+<html>
+    <body>
+        <?php
+        include '../unirest-php/src/Unirest.php';    
+    
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=20&offset=0&ranking=1",
+            array(
+                "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+                "Accept" => "application/json"
+                ));
+        
+            if ($response != NULL){
+                echo "yes!";
+            }
+           
+    
 /*****EXAMPLE OF A SEARCH QUERY FOR POPULATING THE HOME PAGE***********************
 ******VARIABLES - EXPLAINED (to be filled with user info from our DB):
 
@@ -19,4 +28,7 @@ $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p
 * How many results we want: "number=20"
 * Maximize used ingredients first (dont worry too much about this): "ranking=1"
 ***********************************************************************************/
+
 ?>
+    </body>
+</html>
