@@ -20,6 +20,9 @@
         $body = $response->body;  // Parsed response saved as an stdClass
         var_dump($body); //print out stdClass of the $response->body
         
+        $array = json_decode(json_encode($body), true);
+        
+        print($array)
         
 
         
