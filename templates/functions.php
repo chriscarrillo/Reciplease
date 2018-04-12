@@ -35,15 +35,15 @@
         $stmt->store_result();
 
         if (password_verify($password, $row['Password'])){
-            $_SESSION["id"] = $id;
-            $_SESSION["firstName"] = $firstName;
-            $_SESSION["lastName"] = $lastName;
-            $_SESSION["username"] = $username;
-            $_SESSION["email"] = $email;
-            $_SESSION["profilePicture"] = $profilePicture;
-            $_SESSION["dob"] = $dob;
-            $_SESSION["favoriteFood"] = $favoriteFood;
-            $_SESSION["dateRegistered"] = $dateRegistered;
+            $_SESSION["id"] = $row["UserID"];
+            $_SESSION["firstName"] = $row["FirstName"];
+            $_SESSION["lastName"] = $row["LastName"];
+            $_SESSION["username"] = $row["UserName"];
+            $_SESSION["email"] = $row["Email"];
+            $_SESSION["profilePicture"] = $row["ProfilePicture"];
+            $_SESSION["dob"] = $row["DOB"];
+            $_SESSION["favoriteFood"] = $row["FavoriteFood"];
+            $_SESSION["dateRegistered"] = $row["DateRegistered"];
             print "<script type='text/javascript'>window.top.location='..';</script>";
         } else {
             print "Login Failed: (" . $stmt->errno .")" . $stmt->error;
