@@ -22,6 +22,7 @@ body {
     margin: 0px auto;
     font-family: 'Futura Light', sans-serif;
     background-color: #FBEFE7;
+    text-transform: lowercase;
 }
 .centered {
     position: absolute;

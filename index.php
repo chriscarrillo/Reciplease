@@ -15,6 +15,7 @@
     <body id="homePage">
         <div id="home">
             <?php
+                session_start();
 //            include 'unirest-php/src/Unirest.php';
 //            include "templates/logo.php";
 //            
