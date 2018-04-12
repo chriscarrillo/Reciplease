@@ -43,6 +43,7 @@
     <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
     <input type="submit" id="registerBtn" class="button" name="addItem" value="add new item" />
 <?php
+    include "../templates/homeRecipeSearch.php";
     include "../templates/recipecard.php";
 ?>
        
