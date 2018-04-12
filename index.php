@@ -16,20 +16,9 @@
     <?php include "templates/functions.php" ?>
         <div id="home">
             <?php
-<<<<<<< HEAD
             session_start();
             include "templates/logo.php";      
-            
-=======
-                session_start();
-//            include 'unirest-php/src/Unirest.php';
-            include "templates/logo.php";
-//            
-//                $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=20&offset=0&ranking=1",
-//                array("X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR","Accept" => "application/json"));
-//            
-//                echo $response;
->>>>>>> 8d4b726cc8e7a3047deb544b9130500b1d38a21a
+
             ?>
             
         </div>
