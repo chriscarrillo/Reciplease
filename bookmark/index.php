@@ -43,6 +43,7 @@
     <img class="profilepic" src="../images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />;
 <?php
 //    include "../templates/profilepic.php";
+    include "../templates/homeRecipeSearch.php";
     include "../templates/recipecard.php";
 ?>
        
