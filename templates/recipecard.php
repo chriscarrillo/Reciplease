@@ -1,6 +1,3 @@
-<script type="text/javascript" src="../js/PopupWindow.js"></script>
-<script src="../js/infiniteScroll.js"></script>
-
 <div class="recipecard">
     <div id="card1">
         <button id="myBtn" onclick="popup()">View Recipe</button>
@@ -32,20 +29,3 @@
         </div>  
     </div>
 </div>
-
-<script>
-    var elem = document.querySelector('.recipecard');
-    var infScroll = new InfiniteScroll( elem, {
-    // options
-    path: '.pagination__next',
-    append: '.post',
-    history: false,
-    });
-
-    // element argument can be a selector string
-    //   for an individual element
-    var infScroll = new InfiniteScroll('.recipecard', {
-    // options
-    });
-</script>
-
