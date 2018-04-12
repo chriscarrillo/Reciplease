@@ -18,11 +18,17 @@
        // echo $response->raw_body; // Print raw response
         
         $body = $response->body;  // Parsed response saved as an stdClass
-        var_dump($body); //print out stdClass of the $response->body
+        //var_dump($body); //print out stdClass of the $response->body
         
-        $array = json_decode(json_encode($body), true);
+        $url=$body->results[0]->sourceUrl;
+        $image=$body->results[0]->image;
+        $title=$body->results[0]->title;
         
-        print($array)
+        echo $url;
+        echo $image;
+        echo $title
+        
+        
         
 
         
