@@ -65,7 +65,6 @@
         }
         
         for ($i = 0; $i <= count($dietaryRestrictions); $i++) {
-            //$registerStmt = "Insert into DietaryRestriction (UserId, DietaryRestriction) select UserID, '".$dietaryRestrictions[$i]."' from User where Username = '".$usernameDB."'";
             if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO DietaryRestriction (UserID, Restriction) VALUES ((SELECT UserID FROM User WHERE UserName = ?), ?)"))) {
                 print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
             }
@@ -77,8 +76,6 @@
             if (!$stmt->execute()) {
                 print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
             }
-//            $GLOBALS['db']->query($registerStmt);
-//            $result = mysqli_query($GLOBALS['db'], $registerStmt);
         }
         
         if (!$stmt) {
