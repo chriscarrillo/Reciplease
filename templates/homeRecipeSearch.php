@@ -2,7 +2,7 @@
 <html>
     <body>
         <?php
-        include '../unirest-php/src/Unirest.php';    
+        include '../unirest/src/Unirest.php';    
     
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=20&offset=0&ranking=1",
             array(
@@ -11,7 +11,7 @@
                 ));
         
             if ($response != NULL){
-                echo "yes!";
+                echo "Successful API call.";
             }
            
     
