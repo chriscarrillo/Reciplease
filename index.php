@@ -46,10 +46,8 @@
         </div>
  <img class="profilepic" src="images/default.png" title="Profile Picture" alt="Profile Picture"/>
 <?php
-    include "templates/homeRecipeSearch.php";
+    //include "templates/homeRecipeSearch.php";
     include "templates/recipecard.php";
 ?>
-
-
 </body>
 </html>
