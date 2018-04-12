@@ -2,7 +2,6 @@
 <script src="../js/infiniteScroll.js"></script>
 
 <div class="recipecard">
-    <?php include "homeRecipeSearch.php" ?>
     <div id="card1">
         <button id="myBtn" onclick="popup()">View Recipe</button>
         <h2><?php echo $title ?></h2>
