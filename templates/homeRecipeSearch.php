@@ -4,7 +4,7 @@
         <?php
         include '../unirest/src/Unirest.php';    
     
-        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=true&limitLicense=false&number=1&offset=0&ranking=1",
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=false&limitLicense=false&number=2&offset=0&ranking=1",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
@@ -24,9 +24,20 @@
         $image=$body->results[0]->image;
         $title=$body->results[0]->title;
         
+        $url1=$body->results[1]->sourceUrl;
+        $image1=$body->results[1]->image;
+        $title1=$body->results[1]->title;
+        
+        
         echo $url;
         echo $image;
-        echo $title
+        echo $title;
+            
+        echo $url1;
+        echo $image1;
+        echo $title1;
+            
+            
         
         
         
