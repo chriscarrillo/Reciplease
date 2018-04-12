@@ -2,10 +2,11 @@
 <script src="../js/infiniteScroll.js"></script>
 
 <div class="recipecard">
+    <?php include "templates/homeRecipeSearch.php" ?>
     <div id="card1">
         <button id="myBtn" onclick="popup()">View Recipe</button>
+        <h1><?php $title ?></h1>
         <div id="myModal" class="modal">
-
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -16,8 +17,9 @@
     
     <div id ="card2">
         <button id="myBtn" onclick="popup()">View Recipe</button>
+        <h1><?php $title1 ?></h1>
         <div id="myModal" class="modal">
-
+            
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
