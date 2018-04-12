@@ -64,7 +64,7 @@
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
         
-        for ($i = 0; $i <= count($dietaryRestrictions); $i++) {
+        for ($i = 0; $i < count($dietaryRestrictions); $i++) {
             if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO DietaryRestriction (UserID, Restriction) VALUES ((SELECT UserID FROM User WHERE UserName = ?), ?)"))) {
                 print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
             }
