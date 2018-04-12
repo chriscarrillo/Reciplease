@@ -31,6 +31,13 @@
             <li><a href="../popular/">popular</a></li>
             <li><a href="../pantry/">pantry</a></li>
             <li><a href="../profile/">profile</a></li>
+            <?php
+                if (isLoggedIn()) {
+            ?>
+            <li><a href="../logout.php">logout</a></li>
+            <?php
+                }
+            ?>
         </ul>
     </div>
     <img class="profilepic" src="../images/testimage.jpg" title="Profile Picture" alt="Profile Picture" />;

@@ -16,7 +16,7 @@
     }
 
     function login($username, $password) {        
-        if (!($stmt = $GLOBALS['db']->prepare("SELECT * FROM User WHERE UserName = ?"))){
+        if (!($stmt = $GLOBALS['db']->prepare("SELECT UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DateRegistered FROM User WHERE UserName = ?"))){
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
         }
         
