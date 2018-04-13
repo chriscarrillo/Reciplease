@@ -354,6 +354,7 @@ a:active {color: black;}    /* selected link */
     position: absolute;
 }
 #card1 {
+/*    position: relative;*/
     width: 47%;
     height: 25%;
     border-radius: 10px;
@@ -364,6 +365,7 @@ a:active {color: black;}    /* selected link */
     left: 2%;
 }
 #card2 {
+/*    position: relative;*/
     width: 47%;
     height: 25%;
     border-radius: 10px;
@@ -375,21 +377,21 @@ a:active {color: black;}    /* selected link */
 }
 
 #card1 img{
-    transform: translate(-4px, -65px);
+    transform: translate(-4px, -18px);
     border-radius: 10px;
 }
 
 #card2 img{
-    transform: translate(-4px, -65px);
+    transform: translate(-4px, -18px);
     border-radius: 10px;
 }
 
 #card1 button{
-    transform: translate(-250px, 80px);
+    transform: translate(-300px, 80px);
 }
 
 #card2 button{
-    transform: translate(-250px, 80px);
+    transform: translate(-300px, 80px);
 }
 
 #card1 h2{

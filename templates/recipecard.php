@@ -2,7 +2,7 @@
             <!-- Trigger/Open The Modal -->
     <div id="card1">
         <h2><?php echo $title ?></h2>
-        <img src="<?php echo $image ?>" height="200" width="200" align="right">
+        <img src="<?php echo $image ?>" height="150" width="150" align="right">
         <button id="myBtn" class="button">View Recipe</button>
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -25,7 +25,7 @@
      
     <div id="card2">
         <h2><?php echo $title1 ?></h2>
-        <img src="<?php echo $image1 ?>" height="200" width="200" align="right">
+        <img src="<?php echo $image1 ?>" height="150" width="150" align="right">
             <!-- Trigger/Open The Modal -->
         <button id="myBtn1" class="button">View Recipe</button>
         <!-- The Modal -->
