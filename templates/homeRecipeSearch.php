@@ -31,13 +31,21 @@
         $body = $response->body;  // Parsed response saved as an stdClass
         //var_dump($body); //print out stdClass of the $response->body
         
-        $url=$body->results[0]->sourceUrl;
+        $url=$body->results[0]->spoonacularSourceUrl;
         $image=$body->results[0]->image;
         $title=$body->results[0]->title;
+        $score=$body->results[0]->healthScore;
+        $time=$body->results[0]->readyInMinutes;
+
+        //echo $body->results[0]->analyzedInstructions[0]->steps[0]->number;
+        //echo $body->results[0]->analyzedInstructions[0]->steps[0]->step;
         
-        $url1=$body->results[1]->sourceUrl;
+        
+        $url1=$body->results[1]->spoonacularSourceUrl;
         $image1=$body->results[1]->image;
         $title1=$body->results[1]->title;
+        $score1=$body->results[1]->healthScore;
+        $time1=$body->results[1]->readyInMinutes;
         
         
 //        echo $url;
