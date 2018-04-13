@@ -16,7 +16,7 @@
     }
     
     function addIngredient($IngredientName, $Quantity){
-        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (Quantity, ItemName) VALUES (?, ?)"))) {
+        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (Quantity, IngredientName) VALUES (?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         if (!$stmt->bind_param("is", $Quantity, $IngredientName)){
@@ -28,7 +28,7 @@
     }
     
     function getIngredients(){
-         if (!($stmt = $GLOBALS['db']->prepare("SELECT Quantity, ItemName FROM Ingredient"))){ //need to get user specific info here
+         if (!($stmt = $GLOBALS['db']->prepare("SELECT Quantity, IngredientName FROM Ingredient"))){ //need to get user specific info here
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
         }
         if (!$stmt->execute()){
