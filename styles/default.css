@@ -247,8 +247,6 @@ body {
 /* START Forgot */
 /* END Forgot */
 
-/* START modal */
-
 /* HOME PAGE */
 #homePage {
     margin: 0px auto;
@@ -301,6 +299,7 @@ body {
     font-family: 'Futura Light';
     font-style: italic;
     font-size: 20px;
+    z-index: 1
 }
 #title1 {
     margin-bottom: 5px;
