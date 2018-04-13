@@ -36,12 +36,15 @@
     </form>
     
      <?php
+    $ingredients = getIngredients(); // need to get specific info and print
+    
             if (isset($_POST["itemButton"])) {
                 $ItemName = $_POST["itemName"];
                 $QuantityOnHand = $_POST["quantityOnHand"];
                 
                 addIngredient($ItemName, $QuantityOnHand);
             }
+    
     ?>
 <!--<h1>Reciplease</h1>-->
 </body>
