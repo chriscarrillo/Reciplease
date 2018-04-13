@@ -31,22 +31,27 @@
             <li><a href="../popular/">popular</a></li>
             <li><a href="../bookmark/">bookmarks</a></li>
             <li><a href="../profile/">profile</a></li>
-            <?php
-                if (isLoggedIn()) {
-            ?>
-            <li><a href="../logout.php">logout</a></li>
-            <?php
-                }
-            ?>
         </ul>
     </div>
-    <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
-    <input type="submit" id="registerBtn" class="button" name="addItem" value="add new item" />
-<?php
-    include "../templates/homeRecipeSearch.php";
-    include "../templates/recipecard.php";
-?>
-       
+    <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />
+    
+    <form method="post" id="ingredientForm" class="form" enctype="multipart/form-data">
+        <input type="text" id="itemName" name="itemName" placeholder="item name" required /><br />
+        <input type="number" id="quantityOnHand" name="quantityOnHand" placeholder="quantity on hand" required /><br />
+        <input type="submit" id="itemButton" class="button" name="addItem" value="add new item" />
+    </form>
+    
+     <?php
+    $ingredients = getIngredients(); // need to get specific info and print
+    
+            if (isset($_POST["itemButton"])) {
+                $ItemName = $_POST["itemName"];
+                $QuantityOnHand = $_POST["quantityOnHand"];
+                
+                addIngredient($ItemName, $QuantityOnHand);
+            }
+    
+    ?>
 <!--<h1>Reciplease</h1>-->
 </body>
 </html>
