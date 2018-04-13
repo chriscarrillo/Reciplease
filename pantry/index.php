@@ -37,7 +37,7 @@
     
     <form method="post" id="ingredientForm" class="form" enctype="multipart/form-data">
         <input type="text" id="itemName" name="itemName" placeholder="item name" required /><br />
-        <input type="number" id="quantityOnHand" name="quantityOnHand" placeholder="quantity on hand" required /><br />
+        <input type="number" id="quantity" name="quantity" placeholder="quantity on hand" required /><br />
         <input type="submit" id="itemButton" class="button" name="addItem" value="add new item" />
     </form>
     
@@ -46,9 +46,9 @@
     
             if (isset($_POST["itemButton"])) {
                 $ItemName = $_POST["itemName"];
-                $QuantityOnHand = $_POST["quantityOnHand"];
+                $QuantityOnHand = $_POST["quantity"];
                 
-                addIngredient($ItemName, $QuantityOnHand);
+                addIngredient($ItemName, $Quantity);
             }
     
     ?>
