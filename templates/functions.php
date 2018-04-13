@@ -14,6 +14,27 @@
             return false;
         }
     }
+    
+    function addIngredient($IngredientName, $QuantityOnHand){
+        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (QuantityOnHand, ItemName) VALUES (?, ?)"))) {
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
+        }
+        if (!$stmt->bind_param("si", $QuantityOnHand, $IngredientName)){
+                print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        if (!$stmt->execute()) {
+                print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+            }
+    }
+    
+    function getIngredients(){
+         if (!($stmt = $GLOBALS['db']->prepare("SELECT QuantityOnHand, ItemName FROM Ingredient"))){ //need to get user specific info here
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
+        }
+        if (!$stmt->execute()){
+            print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+        }
+    }
 
     function login($username, $password) {        
         if (!($stmt = $GLOBALS['db']->prepare("SELECT UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DateRegistered FROM User WHERE UserName = ?"))){

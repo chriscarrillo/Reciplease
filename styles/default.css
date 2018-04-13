@@ -166,14 +166,14 @@ body {
     margin: 0% 4%;
 }
 
-.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"], .form input[type="submit"],
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"], .form input[type="submit"],.form input[type="number"],
 .half input[type="text"], .half input[type="password"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 
-.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"],
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="date"],.form input[type="number"],
 .half input[type="text"], .half input[type="password"] {
     display: block;
     float: right;
