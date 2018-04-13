@@ -4,9 +4,18 @@
     <body>
 -->
         <?php
-        include 'unirest/src/Unirest.php';    
+        include 'unirest/src/Unirest.php';
     
-        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=american&diet=paleo&fillIngredients=false&includeIngredients=beef%2C+cheese&instructionsRequired=false&limitLicense=false&number=2&offset=0&ranking=1",
+        //remember, commas are represented by %2C+ in the API call
+        $addRecipeInformation = "true";
+        $diet = "paleo%2C+primal";
+        $fillIngredients = "false";
+        $includeIngredients = "beef%2C+cheese";
+        $instructionsRequired = "false";
+        $numberOfResults = "2";
+        
+    
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=0&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
