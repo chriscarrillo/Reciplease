@@ -375,12 +375,12 @@ a:active {color: black;}    /* selected link */
 }
 
 #card1 img{
-    transform: translate(-4px, -65px);
+    transform: translate(-5%, -65px);
     border-radius: 10px;
 }
 
 #card2 img{
-    transform: translate(-4px, -65px);
+    transform: translate(-5%, -50%);
     border-radius: 10px;
 }
 
