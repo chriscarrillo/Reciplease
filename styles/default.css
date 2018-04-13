@@ -56,6 +56,10 @@ body {
     float: right;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
 /* START Logo */
 .logo {
     font-family: 'Logo Lite';
@@ -353,7 +357,7 @@ a:active {color: black;}    /* selected link */
 #recipecard {
     position: absolute;
 }
-#card1 {
+.card1 {
 /*    position: relative;*/
     width: 47%;
     height: 25%;
@@ -364,7 +368,7 @@ a:active {color: black;}    /* selected link */
     top: 42%;
     left: 2%;
 }
-#card2 {
+.card2 {
 /*    position: relative;*/
     width: 47%;
     height: 25%;
@@ -376,29 +380,29 @@ a:active {color: black;}    /* selected link */
     left: 52%;
 }
 
-#card1 img{
+.card1 img{
     transform: translate(-4px, -18px);
     border-radius: 10px;
 }
 
-#card2 img{
+.card2 img{
     transform: translate(-4px, -18px);
     border-radius: 10px;
 }
 
-#card1 button{
+.card1 button{
     transform: translate(-300px, 80px);
 }
 
-#card2 button{
+.card2 button{
     transform: translate(-300px, 80px);
 }
 
-#card1 h2{
+.card1 h2{
     transform: translate(20px,0px);
 }
 
-#card2 h2{
+.card2 h2{
     transform: translate(20px,0px);
 }
 /* End Recipe Card */
@@ -502,17 +506,4 @@ a:active {color: black;}    /* selected link */
 }
     
 /* The Close Button */
-.close1 {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close1:hover,
-.close1:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
