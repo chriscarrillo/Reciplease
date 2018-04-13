@@ -19,7 +19,7 @@
         if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (Quantity, ItemName) VALUES (?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
-        if (!$stmt->bind_param("si", $Quantity, $IngredientName)){
+        if (!$stmt->bind_param("is", $Quantity, $IngredientName)){
                 print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         if (!$stmt->execute()) {
