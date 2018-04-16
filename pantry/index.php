@@ -48,7 +48,7 @@
                 $itemName = $_POST["itemName"];
                 $quantity = $_POST["quantity"];
                 
-                addIngredient($itemName, $quantity);
+                addIngredient($_SESSION["id"], $itemName, $quantity);
             }
     
     ?>
