@@ -44,7 +44,7 @@
      <?php
     $ingredients = getIngredients(); // need to get specific info and print
     
-            if (isset($_POST["itemButton"])) {
+            if (isset($_POST["addItem"])) {
                 $ItemName = $_POST["itemName"];
                 $QuantityOnHand = $_POST["quantity"];
                 
