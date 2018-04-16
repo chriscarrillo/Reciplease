@@ -15,11 +15,11 @@
         }
     }
     
-    function addIngredient($id, $name, $quantity){
+    function addIngredient($id, $name, $quantity) {
         if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (UserID, Quantity, IngredientName) VALUES (?, ?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
-        if (!$stmt->bind_param("is", $id, $quantity, $name)){
+        if (!$stmt->bind_param("iis", $id, $quantity, $name)){
                 print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         if (!$stmt->execute()) {
@@ -27,13 +27,20 @@
             }
     }
     
-    function getIngredients(){
-         if (!($stmt = $GLOBALS['db']->prepare("SELECT Quantity, IngredientName FROM Ingredient"))){ //need to get user specific info here
+    function getIngredients($id) {
+         if (!($stmt = $GLOBALS['db']->prepare("SELECT Quantity, IngredientName FROM Ingredient WHERE UserID = ?"))){
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
         }
+        
+        if (!$stmt->bind_param("i", $id)){
+                print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        
         if (!$stmt->execute()){
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
+        
+        return $stmt->get_result();
     }
 
     function login($username, $password) {        
