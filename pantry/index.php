@@ -45,10 +45,10 @@
     $ingredients = getIngredients(); // need to get specific info and print
     
             if (isset($_POST["addItem"])) {
-                $ItemName = $_POST["itemName"];
-                $QuantityOnHand = $_POST["quantity"];
+                $itemName = $_POST["itemName"];
+                $quantity = $_POST["quantity"];
                 
-                addIngredient($ItemName, $Quantity);
+                addIngredient($itemName, $quantity);
             }
     
     ?>
