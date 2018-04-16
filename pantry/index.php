@@ -42,14 +42,14 @@
     </form>
     
      <?php
-    $ingredients = getIngredients(); // need to get specific info and print
-    
-            if (isset($_POST["addItem"])) {
-                $itemName = $_POST["itemName"];
-                $quantity = $_POST["quantity"];
-                
-                addIngredient($_SESSION["id"], $itemName, $quantity);
-            }
+        $ingredients = getIngredients($_SESSION["id"]);
+        
+        if (isset($_POST["addItem"])) {
+            $itemName = $_POST["itemName"];
+            $quantity = $_POST["quantity"];
+
+            addIngredient($_SESSION["id"], $itemName, $quantity);
+        }
     
     ?>
 <!--<h1>Reciplease</h1>-->
