@@ -15,11 +15,11 @@
         }
     }
     
-    function addIngredient($IngredientName, $Quantity){
-        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (Quantity, IngredientName) VALUES (?, ?)"))) {
+    function addIngredient($id, $name, $quantity){
+        if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO Ingredient (UserID, Quantity, IngredientName) VALUES (?, ?, ?)"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
-        if (!$stmt->bind_param("is", $Quantity, $IngredientName)){
+        if (!$stmt->bind_param("is", $id, $quantity, $name)){
                 print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         if (!$stmt->execute()) {
