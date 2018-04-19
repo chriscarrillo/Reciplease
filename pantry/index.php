@@ -61,8 +61,8 @@
         if (isset($_POST["addItem"])) {
             $itemName = $_POST["itemName"];
             $quantity = $_POST["quantity"];
-
             addIngredient($_SESSION["id"], $itemName, $quantity);
+            header("Refresh:0");
             
         }
     
