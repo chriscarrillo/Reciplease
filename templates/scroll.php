@@ -75,13 +75,13 @@ for ($i = 0; $i < (int) $numberOfResults; $i++) {
     <div class="card1">
         <h2><?php echo $title ?></h2>
         <img src="<?php echo $image ?>" height="150" width="150" align="right">
-        <button class="button" onclick="openModal(<?= $numOfRecipes ?>)">View Recipe</button>
+        <button class="button" onclick="openModal(<?= $i ?>)">View Recipe</button>
         <!-- The Modal -->
         <div class="modal">
           <!-- Modal content -->
           <div class="modal-content">
             <div class="modal-header">
-              <span class="close" onclick="closeModal(<?= $numOfRecipes ?>)">&times;</span>
+              <span class="close" onclick="closeModal(<?= $i ?>)">&times;</span>
               <h2><?php echo $title ?></h2>
             </div>
             <div class="modal-body">
@@ -94,8 +94,6 @@ for ($i = 0; $i < (int) $numberOfResults; $i++) {
           </div>
         </div>  
     </div>
-     
-    
 </div>
 <?php
 }
