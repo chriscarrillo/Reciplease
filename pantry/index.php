@@ -43,19 +43,13 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
-        while($row = $ingredients->fetch_array(MYSQLI_ASSOC)){
-            echo "Ingredient: ".$row["IngredientName"]." Quantity: ".$row["Quantity"].;
-        }
     
         if (isset($_POST["addItem"])) {
             $itemName = $_POST["itemName"];
             $quantity = $_POST["quantity"];
 
             addIngredient($_SESSION["id"], $itemName, $quantity);
-            $ingredients = getIngredients($_SESSION["id"]);
-            while($row = $ingredients->fetch_array(MYSQLI_ASSOC)){
-                echo "Ingredient: ".$row["IngredientName"]." Quantity: ".$row["Quantity"].;
-            }   
+            $ingredients = getIngredients($_SESSION["id"]); 
             
         }
     
