@@ -45,14 +45,17 @@
         <th>Ingredients</th>
         <th>Quantity</th>
       </tr>
-       <tr>
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
         $num_of_rows = $ingredients->num_rows;
         // echo $ingredients;
         while($row = $ingredients->fetch_assoc()) {
-            ?><td><?php echo $row["IngredientName"];?></td>
-            <td><?php echo $row["Quantity"];?></td><?php
+            ?>
+        <tr>
+           <td><?php echo $row["IngredientName"];?></td>
+           <td><?php echo $row["Quantity"];?></td>
+        </tr>
+        <?php
         }
     
         if (isset($_POST["addItem"])) {
@@ -64,7 +67,6 @@
         }
     
     ?>
-      </tr>
     </table>
 <!--<h1>Reciplease</h1>-->
 </body>
