@@ -38,12 +38,16 @@
                     if (isLoggedIn()) {
                 ?>
                 <li><a href="logout.php">logout</a></li>
+                <img class="profilepic" src="<?= $_SESSION["profilePicture"] ?>" title="Profile Picture" alt="Profile Picture"/>
+                <?php
+                    } else {
+                ?>
+                <li><a href="login/">login</a></li>
                 <?php
                     }
                 ?>
             </ul>
         </div>
-        <img class="profilepic" src="images/default.png" title="Profile Picture" alt="Profile Picture"/>
         
         <div class="container clear">
             <div class="row">
