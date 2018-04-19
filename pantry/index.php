@@ -40,7 +40,7 @@
         <input type="number" id="quantity" name="quantity" placeholder="quantity on hand" required /><br />
         <input type="submit" id="itemButton" class="button" name="addItem" value="add new item" />
     </form>
-    <table style="width:50%">
+    <table style="width:50%" align="center">
       <tr>
         <th>Ingredients</th>
         <th>Quantity</th>
