@@ -46,7 +46,7 @@
         $row = $userdata->fetch_array(MYSQLI_ASSOC);
     
         for($i=0; $i<sizeof($row); $i++) {
-            echo $row["IngredientName"]+"    "+$row["Quantity"];
+            echo "Ingredient: ".$row["IngredientName"]."    Quantity: ".$row["Quantity"].;
         }
         
         if (isset($_POST["addItem"])) {
@@ -56,6 +56,10 @@
             addIngredient($_SESSION["id"], $itemName, $quantity);
             $ingredients = getIngredients($_SESSION["id"]);
             $row = $userdata->fetch_array(MYSQLI_ASSOC);
+            
+            for($i=0; $i<sizeof($row); $i++) {
+                echo $row["IngredientName"]+"    "+$row["Quantity"];
+            }
         }
     
     ?>
