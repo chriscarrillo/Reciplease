@@ -43,12 +43,19 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
+        $row = $userdata->fetch_array(MYSQLI_ASSOC);
+    
+        for($i=0; $i<sizeof($row); $i++) {
+            echo $row["IngredientName"]+"    "+$row["Quantity"];
+        }
         
         if (isset($_POST["addItem"])) {
             $itemName = $_POST["itemName"];
             $quantity = $_POST["quantity"];
 
             addIngredient($_SESSION["id"], $itemName, $quantity);
+            $ingredients = getIngredients($_SESSION["id"]);
+            $row = $userdata->fetch_array(MYSQLI_ASSOC);
         }
     
     ?>
