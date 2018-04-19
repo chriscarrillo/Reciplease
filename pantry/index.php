@@ -43,13 +43,15 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
+        while($ingredients) {
+            echo "Ingredients: ".$ingredients["IngredientName"]." Quantity: ".$ingredients["Quantity"];
+        }
     
         if (isset($_POST["addItem"])) {
             $itemName = $_POST["itemName"];
             $quantity = $_POST["quantity"];
 
             addIngredient($_SESSION["id"], $itemName, $quantity);
-            $ingredients = getIngredients($_SESSION["id"]); 
             
         }
     
