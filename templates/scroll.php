@@ -7,7 +7,7 @@
     $fillIngredients = "false";
     $includeIngredients = "beef%2C+cheese";
     $instructionsRequired = "false";
-    $numberOfResults = "1";
+    $numberOfResults = "10";
     $numOfCalls = $_POST["page"];
     $offset = ($numOfCalls);
     $numOfRecipes = ($offset - 1);
@@ -28,12 +28,6 @@
 
     $body = $response->body;  // Parsed response saved as an stdClass
     //var_dump($body); //print out stdClass of the $response->body
-
-    $url=$body->results[0]->spoonacularSourceUrl;
-    $image=$body->results[0]->image;
-    $title=$body->results[0]->title;
-    $score=$body->results[0]->healthScore;
-    $time=$body->results[0]->readyInMinutes;
 
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->number;
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->step;
@@ -68,6 +62,12 @@
     * Maximize used ingredients first (dont worry too much about this): "ranking=1"
     ***********************************************************************************/
 
+for ($i = 0; $i < (int) $numberOfResults; $i++) {
+    $url=$body->results[$i]->spoonacularSourceUrl;
+    $image=$body->results[$i]->image;
+    $title=$body->results[$i]->title;
+    $score=$body->results[$i]->healthScore;
+    $time=$body->results[$i]->readyInMinutes;
 ?>
 
 <div class="recipecard">
@@ -85,11 +85,11 @@
               <h2><?php echo $title ?></h2>
             </div>
             <div class="modal-body">
-              <p><?php echo "Time:".$time." Minutes   Score:".$score."/100" ?></p>
+              <p><?php echo "Time: ".$time." Minutes   Score:".$score."/100" ?></p>
               <p>Some other text...</p>
             </div>
             <div class="modal-footer">
-              <h3><a href="<?php echo $url ?>">Visit Recipe</a></h3>
+              <h3><a href="<?php echo $url ?>" target="_blank">Visit Recipe</a></h3>
             </div>
           </div>
         </div>  
@@ -97,3 +97,6 @@
      
     
 </div>
+<?php
+}
+?>
