@@ -24,7 +24,7 @@
         }
         if (!$stmt->execute()) {
                 print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
-            }
+        }
     }
     
     function getIngredients($id) {
