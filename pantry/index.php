@@ -43,8 +43,9 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
-        echo $ingredients;
-        while($row = mysql_fetch_array($ingredients)) {
+        $num_of_rows = $ingredients->num_rows;
+        // echo $ingredients;
+        while($row = $ingredients->fetch_assoc()) {
             echo "Ingredients: ".$row["IngredientName"]." Quantity: ".$row["Quantity"];
         }
     
