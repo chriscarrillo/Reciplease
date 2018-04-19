@@ -40,13 +40,19 @@
         <input type="number" id="quantity" name="quantity" placeholder="quantity on hand" required /><br />
         <input type="submit" id="itemButton" class="button" name="addItem" value="add new item" />
     </form>
-    
+    <table style="width:100%">
+      <tr>
+        <th>Ingredients</th>
+        <th>Quantity</th>
+      </tr>
+       <tr>
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
         $num_of_rows = $ingredients->num_rows;
         // echo $ingredients;
         while($row = $ingredients->fetch_assoc()) {
-            ?><h1><?php echo "Ingredients: ".$row["IngredientName"]." Quantity: ".$row["Quantity"];?></h1><?php
+            ?><td><?php echo $row["IngredientName"];?></td>
+            <td><?php echo $row["Quantity"];?></td><?php
         }
     
         if (isset($_POST["addItem"])) {
@@ -58,6 +64,8 @@
         }
     
     ?>
+      </tr>
+    </table>
 <!--<h1>Reciplease</h1>-->
 </body>
 </html>
