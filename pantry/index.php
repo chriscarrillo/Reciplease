@@ -46,7 +46,7 @@
         $num_of_rows = $ingredients->num_rows;
         // echo $ingredients;
         while($row = $ingredients->fetch_assoc()) {
-            echo ?> <h1><?php"Ingredients: ".$row["IngredientName"]." Quantity: ".$row["Quantity"];?></h1><?php
+            ?><h1><?php echo "Ingredients: ".$row["IngredientName"]." Quantity: ".$row["Quantity"];?></h1><?php
         }
     
         if (isset($_POST["addItem"])) {
