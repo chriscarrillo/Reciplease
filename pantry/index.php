@@ -44,7 +44,7 @@
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
         $row = $ingredients->fetch_array(MYSQLI_ASSOC);
-        echo $row
+        echo $row;
     
         if (isset($_POST["addItem"])) {
             $itemName = $_POST["itemName"];
