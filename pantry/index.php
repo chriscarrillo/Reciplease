@@ -43,8 +43,8 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
-        while($ingredients) {
-            echo "Ingredients: ".$ingredients["IngredientName"]." Quantity: ".$ingredients["Quantity"];
+        while($row = mysql_fetch_array($ingredients)) {
+            echo "Ingredients: ".$row["IngredientName"]." Quantity: ".$row["Quantity"];
         }
     
         if (isset($_POST["addItem"])) {
