@@ -43,9 +43,9 @@
     
      <?php
         $ingredients = getIngredients($_SESSION["id"]);
-        $row = $ingredients->fetch_array(MYSQLI_ASSOC);
-        for($i=0; $i<sizeof($row); $i++) {
-            echo "Ingredient: ".$row[$i]["IngredientName"]."  Quantity: ".$row[$i]["Quantity"];
+        //$row = $ingredients->fetch_array(MYSQLI_ASSOC);
+        for($row = $ingredients->fetch_array(MYSQLI_ASSOC)) {
+            echo "Ingredient: ".$row["IngredientName"]."  Quantity: ".$row["Quantity"];
         }
     
         if (isset($_POST["addItem"])) {
@@ -54,8 +54,8 @@
 
             addIngredient($_SESSION["id"], $itemName, $quantity);
             $ingredients = getIngredients($_SESSION["id"]);
-            $row = $ingredients->fetch_array(MYSQLI_ASSOC);
-            for($i=0; $i<sizeof($row); $i++) {
+            //$row = $ingredients->fetch_array(MYSQLI_ASSOC);
+            while($row = $ingredients->fetch_array(MYSQLI_ASSOC)) {
                 echo "Ingredient: ".$row[$i]["IngredientName"]."  Quantity: ".$row[$i]["Quantity"];
             }
             
