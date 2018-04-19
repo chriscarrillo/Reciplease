@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="styles/small.css" media="only screen and (max-width: 750px)" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-<!--    <script type="text/javascript" src="js/modal.js"></script>-->
+    <script type="text/javascript" src="js/modal.js"></script>
 </head>  
     <body id="homePage">
     <?php include "templates/functions.php" ?>
@@ -53,23 +53,6 @@
                 <img src="images/ajax-loader.gif" id="ani_img" style="width: 50px" />
             </div>
         </div>
-        <script type="text/javascript">
-            function openModal(index) {
-                var modal = document.getElementsByClassName("modal")[index];
-                modal.style.display = "block";
-
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            }
-
-            function closeModal(index) {
-                var modal = document.getElementsByClassName("modal")[index];
-                modal.style.display = "none";
-            }
-        </script>
     
         <script type="text/javascript" src="js/scroll.js"></script>
 </body>
