@@ -33,7 +33,7 @@
                 <li><h1>popular</h1></li>
                 <li><a href="../index.php">home</a></li>
                 <li><a href="../pantry/">pantry</a></li>
-                <li><a href="../bookmark/">bookmarks</a></li>
+                <!-- <li><a href="../bookmark/">bookmarks</a></li> -->
                 <li><a href="../profile/">profile</a></li>
                 <?php
                     if (isLoggedIn()) {
