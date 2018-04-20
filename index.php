@@ -22,8 +22,10 @@
             
         </div>
         <form action="" method="post" id="searchForm" class="form">
-                <input type="textSearch" id="search" name="search" placeholder="search" /><br />
+            <input type="text" id="search" name="search" placeholder="search" /><br />
+            <input type="submit" id="searchSubmit" name="searchSubmit" />
         </form>
+        
         <div id="title">
             <h1 id="title1">your recipes...</h1>
             <h1 id="title2">prepared fresh daily</h1>
@@ -48,6 +50,14 @@
                 ?>
             </ul>
         </div>
+        
+        <?php
+            if (isset($_POST["searchSubmit"])) {
+        ?>
+        <script type="text/javascript">search(<?= $_POST["search"] ?>);</script>
+        <?php
+            }
+        ?>
         
         <div class="container clear">
             <div class="row">
