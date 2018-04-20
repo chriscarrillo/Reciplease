@@ -32,7 +32,7 @@
         </div>
         <div id="tabs">
             <ul>
-                <li><h1>home</h1></a></li>
+                <li><h1>home</h1></li>
                 <li><a href="popular/">popular</a></li>
                 <li><a href="pantry/">pantry</a></li>
                 <li><a href="profile/">profile</a></li>
