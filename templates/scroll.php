@@ -33,7 +33,9 @@
             "Accept" => "application/json"
             ));
 
-    if (empty($response)) {
+$url=$body->results[$i]->spoonacularSourceUrl;
+
+    if ($url == "") {
         
     $addRecipeInformation = "true";
     $fillIngredients = "true";
