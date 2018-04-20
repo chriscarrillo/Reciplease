@@ -106,11 +106,11 @@
                 <div class="clear">
                     <div id="dietaryRestrctionsCheckboxes">
                         <p>dietary restrictions:</p>
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="lacto vegetarian"> Lacto Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="ovo vegetarian"> Ovo Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="pescetarian"> Pescetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegan"> Vegan</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegetarian"> Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="lacto vegetarian"> Lacto Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="ovo vegetarian"> Ovo Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="pescetarian"> Pescetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="vegan"> Vegan</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="vegetarian"> Vegetarian</label><br />
                     </div>
                 </div>
             </div>
@@ -123,7 +123,6 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
-                $dietaryRestrictions = array();
                 
                 // Check if the user uploaded its own profile picture
                 if (isset($_POST["profilePhoto"])) {
@@ -134,14 +133,10 @@
                     $profilePhoto = addslashes(file_get_contents("../images/default.png"));
                 }
                 
-                // Populate the array with dietary restrictions if they have any
-                if (!empty($_POST["dietaryRestrictions"])) {
-                    foreach ($_POST["dietaryRestrictions"] as $restriction) {
-                        array_push($dietaryRestrictions, $restriction);
-                    }
-                }
+                // Populate with dietary restrictions
+                $dietaryRestriction = $_POST["dietaryRestriction"];
                 
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestriction);
             }
         ?>
     </div>
