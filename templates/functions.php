@@ -107,7 +107,7 @@
         }
     }
 
-    function register(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestrictions) {
+    function register(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestriction) {
         $fNameDB = ucfirst(strtolower($fName));
         $lNameDB = ucfirst(strtolower($lName));
         $emailDB = strtolower($email);
@@ -127,12 +127,12 @@
             print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
         
-        for ($i = 0; $i < count($dietaryRestrictions); $i++) {
+        if (empty($dietaryRestriction)) {
             if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO DietaryRestriction (UserID, Restriction) VALUES ((SELECT UserID FROM User WHERE UserName = ?), ?)"))) {
                 print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
             }
 
-            if (!$stmt->bind_param("ss", $usernameDB, $dietaryRestrictions[$i])){
+            if (!$stmt->bind_param("ss", $usernameDB, $dietaryRestriction)){
                 print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
             }
 
