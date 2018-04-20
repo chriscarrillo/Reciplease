@@ -58,6 +58,6 @@
             </div>
         </div>
     
-        <script type="text/javascript" src="../js/scroll.js"></script>
+        <script type="text/javascript" src="../js/scrollPop.js"></script>
 </body>
 </html>
