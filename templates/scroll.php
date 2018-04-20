@@ -33,7 +33,7 @@
             "Accept" => "application/json"
             ));
 
-    if (empty($response)) {
+    if ($response == NULL) {
         
     $addRecipeInformation = "true";
     $fillIngredients = "true";
