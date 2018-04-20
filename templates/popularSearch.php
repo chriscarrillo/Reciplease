@@ -22,6 +22,7 @@
         $title=$body->recipes[0]->title;
         $score=$body->recipes[0]->healthScore;
         $time=$body->recipes[0]->readyInMinutes;
+        
         echo $url;
         echo $image;
         echo $title;

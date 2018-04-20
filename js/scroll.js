@@ -9,7 +9,7 @@ $(window).scroll(function() {
 
 function loadContent(myPage) {
     $("#ani_img").show();
-    $.post("templates/scroll.php", {page:myPage}, function(data) {
+    $.post("../templates/scroll.php", {page:myPage}, function(data) {
         if (data.trim().length == 0) {
             $("#loading").text("End of Page");
         }
