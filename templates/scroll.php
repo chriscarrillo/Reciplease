@@ -4,7 +4,7 @@
     //remember, commas are represented by %2C+ in the API call
     $addRecipeInformation = "true";
     $diet = "paleo%2C+primal";
-    $fillIngredients = "false";
+    $fillIngredients = "true";
     $includeIngredients = "beef%2C+cheese";
     $instructionsRequired = "false";
     $numberOfResults = "10";
@@ -68,13 +68,20 @@ for ($i = 0; $i < (int) $numberOfResults; $i++) {
     $title=$body->results[$i]->title;
     $score=$body->results[$i]->healthScore;
     $time=$body->results[$i]->readyInMinutes;
+    $count=$body->results[$i]->missedIngredientCount;
+    $ingredientArray=array();
+    for($j=0; $j<$count; $j++){
+        $ingredients=$body->results[$i]->missedIngredients[$j]->name;
+        array_push($ingredientArray, $ingredients);
+    }
+
 ?>
 
 <div class="recipecard">
     <!-- Trigger/Open The Modal -->
     <div class="card1">
         <h2><?php echo $title ?></h2>
-        <img src="<?php echo $image ?>" height="150" width="150" align="right">
+        <img src="<?php echo $image; ?>" height="150" width="150" align="right">
         <button class="button" onclick="openModal(<?= $i ?>)">View Recipe</button>
         <!-- The Modal -->
         <div class="modal">
@@ -82,14 +89,18 @@ for ($i = 0; $i < (int) $numberOfResults; $i++) {
           <div class="modal-content">
             <div class="modal-header">
               <span class="close" onclick="closeModal(<?= $i ?>)">&times;</span>
-              <h2><?php echo $title ?></h2>
+              <h2><?php echo $title; ?></h2>
             </div>
             <div class="modal-body">
-              <p><?php echo "Time: ".$time." Minutes   Score:".$score."/100" ?></p>
-              <p>Some other text...</p>
+              <h3><?php echo "Time: ".$time." Minutes" ?></h3>
+              <h3><?php echo "Score:".$score."/100" ?></h3>
+                <h3>Ingredients</h3>
+                <?php foreach($ingredientArray as $food){ ?>
+                    <p><?php echo $food;  ?></p>    
+                <?php } ?>
             </div>
             <div class="modal-footer">
-              <h3><a href="<?php echo $url ?>" target="_blank">Visit Recipe</a></h3>
+              <h3><a href="<?php echo $url; ?>" target="_blank">Visit Recipe</a></h3>
             </div>
           </div>
         </div>  
