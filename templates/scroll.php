@@ -32,8 +32,9 @@
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
             "Accept" => "application/json"
             ));
-
-    if ($response == NULL) {
+    $totalResults=$body->totalresults[0];
+    echo $totalResults;
+    if ($totaresults == 0) {
         
     $addRecipeInformation = "true";
     $fillIngredients = "true";
