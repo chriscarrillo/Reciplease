@@ -150,7 +150,47 @@
         }
     }
 
-    function updateProfile() {
+    function updateProfile(&$fName, &$lName, &$email, $favFood, &$username, &$password, $profilePhoto, $dob, $dietaryRestrictions) {
+        $fNameDB = ucfirst(strtolower($fName));
+        $lNameDB = ucfirst(strtolower($lName));
+        $emailDB = strtolower($email);
+        $usernameDB = strtolower($username);
+        $passwordDB = password_hash($password, PASSWORD_DEFAULT);
+        $dobDB = date("Y-m-d", strtotime($dob));
         
+        
+        if (!($stmt = $GLOBALS['db']->prepare("UPDATE User SET FirstName=?, LastName=?, UserName=?, Password=?, Email=?, ProfilePicture=?, DOB=?, FavoriteFood=? WHERE Firstname=? AND Lastname=?"))) {
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
+        }
+        
+        if (!$stmt->bind_param("sssssbssss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, &$fNameDB, &$lNameDB)){
+            print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        
+        if (!$stmt->execute()) {
+            print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+        }
+        
+        for ($i = 0; $i < count($dietaryRestrictions); $i++) {
+            if (!($stmt = $GLOBALS['db']->prepare("INSERT INTO DietaryRestriction (UserID, Restriction) VALUES ((SELECT UserID FROM User WHERE UserName = ?), ?)"))) {
+                print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
+            }
+
+            if (!$stmt->bind_param("ss", $usernameDB, $dietaryRestrictions[$i])){
+                print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+            }
+
+            if (!$stmt->execute()) {
+                print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+            }
+        }
+        
+        if (!$stmt) {
+            print $fNameDB . " " . $lNameDB . " " . $usernameDB . " " . $passwordDB . " " . $emailDB . " " . $dob . " " . $favFood . " " . $dietaryRestrictions . "<br />";
+            print "Error: " . mysqli_error($GLOBALS['db']);
+        } else {
+            print "<script type='text/javascript'>window.top.location='../login';</script>";
+            exit;
+        }
     }
 ?>
