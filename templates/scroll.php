@@ -16,7 +16,7 @@
 
     $getUserIngredients = getIngredients($_SESSION["id"]);
     $ingredientsArray = [];
-    while($row = $userIngredients->fetch_assoc()) {
+    while($row = $getUserIngredients->fetch_assoc()) {
         array_push($ingredientsArray, $row["IngredientName"]);
     }
     $includeIngredients = implode("%2C+", $ingredientsArray);
@@ -25,7 +25,7 @@
     
     $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
     $restrictionsArray = [];
-    while($row = $userRestrictions->fetch_assoc()) {
+    while($row = $getUserDietaryRestrictions->fetch_assoc()) {
         array_push($restrictionsArray, $row["Restriction"]);
     }
     $diet = implode("%2C+", $restrictionsArray);
