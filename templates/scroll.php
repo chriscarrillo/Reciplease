@@ -14,14 +14,14 @@
     $numOfRecipes = ($offset - 1);
 
     $getUserIngredients = getIngredients($_SESSION["id"]);
-    $ingredientsArray = [];
+    $ingredientsArray = array();
     while($row = $getUserIngredients->fetch_assoc()) {
         array_push($ingredientsArray, $row["IngredientName"]);
     }
     $includeIngredients = implode("%2C+", $ingredientsArray);
     
     $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
-    $restrictionsArray = [];
+    $restrictionsArray = array();
     while($row = $getUserDietaryRestrictions->fetch_assoc()) {
         array_push($restrictionsArray, $row["Restriction"]);
     }
@@ -33,8 +33,8 @@
             "Accept" => "application/json"
             ));
 
-    $totalResults=$body->totalresults[0];
-    if ($totalresults == 0 && $diet != "";) {
+    $totalResults = $body->totalresults[0];
+    if (($totalResults == 0) && (!empty($diet))) {
         
         $addRecipeInformation = "true";
         $fillIngredients = "true";
