@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </div>
-        <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />;
+        <!-- <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />; -->
         <div id="centerBox" class="centered">
             <h1><?= print $_SESSION["firstName"] ?>'s profile</h1>
             <form action="" method="post" id="profileForm" class="form">
