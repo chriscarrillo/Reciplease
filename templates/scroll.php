@@ -1,17 +1,25 @@
 <?php
     include "../unirest/src/Unirest.php";
+    include "functions.php";
 
     //remember, commas are represented by %2C+ in the API call
     $addRecipeInformation = "true";
     $diet = "paleo%2C+primal";
     $fillIngredients = "true";
-    $includeIngredients = "beef%2C+cheese";
+    $includeIngredients = "";
     $instructionsRequired = "false";
     $numberOfResults = "10";
     $numOfCalls = $_POST["page"];
     $offset = ($numOfCalls);
     $numOfRecipes = ($offset - 1);
 
+    $getUserIngredients = getIngredientNames($_SESSION["id"]);
+    $ingredientsArray = [];
+    while($row = $restrictions->fetch_assoc()) {
+        array_push($ingredientsArray, $row["IngredientName "]);
+    }
+    $includeIngredients = implode("%2C+", $array);
+    
 
     $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
         array(
