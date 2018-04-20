@@ -43,6 +43,22 @@
         return $stmt->get_result();
     }
 
+function getIngredientNames($id) {
+         if (!($stmt = $GLOBALS['db']->prepare("SELECT IngredientName FROM Ingredient WHERE UserID = ?"))){
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
+        }
+        
+        if (!$stmt->bind_param("i", $id)){
+                print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        
+        if (!$stmt->execute()){
+            print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+        }
+        
+        return $stmt->get_result();
+    }
+
     function login($username, $password) {        
         if (!($stmt = $GLOBALS['db']->prepare("SELECT UserID, FirstName, LastName, UserName, Password, Email, ProfilePicture, DOB, FavoriteFood, DateRegistered FROM User WHERE UserName = ?"))){
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
