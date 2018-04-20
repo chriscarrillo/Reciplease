@@ -6,7 +6,7 @@
 </head>  
 <body id="homePage">
 <?php include "../templates/functions.php" ?>
-    <div id="pantry">
+    <div id="home">
         <?php
             session_start();
 
