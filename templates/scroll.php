@@ -43,14 +43,8 @@
         $offset = ($numOfCalls);
         $numOfRecipes = ($offset - 1);
         
-        $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
-        $restrictionsArray = [];
-        while($row = $getUserDietaryRestrictions->fetch_assoc()) {
-            array_push($restrictionsArray, $row["Restriction"]);
-        }
-        $diet = implode("%2C+", $restrictionsArray);
         
-        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
         array(
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
             "Accept" => "application/json"
