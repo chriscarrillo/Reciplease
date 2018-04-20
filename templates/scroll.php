@@ -23,7 +23,7 @@
             array_push($ingredientsArray, $row["IngredientName"]);
         }
 
-        $includeIngredients = implode("%2C+", $ingredientsArray);
+        $includeIngredients = implode("%2C", $ingredientsArray);
     }
 
     $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
@@ -36,9 +36,6 @@
         
         $diet = implode("%2C", $restrictionsArray);
     }
-
-    var_dump($diet);
-    var_dump($restrictionsArray);
     
     if (empty($ingredientsArray) && empty($restrictionsArray)) {
         print "Ingredients array is empty and restrictions array is empty";
