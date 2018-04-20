@@ -54,7 +54,7 @@
         <?php
             if (isset($_POST["searchSubmit"])) {
         ?>
-        <script type="text/javascript">search(<?= $_POST["search"] ?>);</script>
+        <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
         <?php
             }
         ?>
