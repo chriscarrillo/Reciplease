@@ -108,9 +108,16 @@
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="vegetarian"> Vegetarian</label><br />
                     </div>
                 </div>
-                <input type="submit" name="updateProfile" value="Update Profile" />
                 </div>
+                <input type="submit" name="updateProfile" value="Update Profile" />
             </form>
+            <?php
+                if (isset($_POST["updateProfile"])) {
+                    $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
+
+                    updateProfile($_SESSION["id"], $_POST["firstName"], $_POST["lastName"], $_POST["username"], $_POST["password"], $_POST["email"], $dob);
+                }
+            ?>
         </div>
     </div>
 </body>

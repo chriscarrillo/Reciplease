@@ -149,4 +149,8 @@
             exit;
         }
     }
+
+    function updateProfile() {
+        
+    }
 ?>
