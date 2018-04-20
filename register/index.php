@@ -106,11 +106,11 @@
                 <div class="clear">
                     <div id="dietaryRestrctionsCheckboxes">
                         <p>dietary restrictions:</p>
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="lacto vegetarian"> Lacto Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="ovo vegetarian"> Ovo Vegetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="pescetarian"> Pescetarian</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegan"> Vegan</label><br />
-                        <label><input type="checkbox" name="dietaryRestrictions[]" value="vegetarian"> Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="lacto vegetarian"> Lacto Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="ovo vegetarian"> Ovo Vegetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="pescetarian"> Pescetarian</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="vegan"> Vegan</label><br />
+                        <label><input type="radio" name="dietaryRestriction" value="vegetarian"> Vegetarian</label><br />
                     </div>
                 </div>
             </div>
