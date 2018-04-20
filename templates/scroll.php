@@ -45,6 +45,7 @@
                 "Accept" => "application/json"
                 ));
     } else if (empty($ingredientsArray) && !empty($restrictionsArray)) {
+        print $diet . "<br />";
         print "Ingredients array is empty and restrictions array is NOT empty";
          $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
@@ -52,6 +53,7 @@
                 "Accept" => "application/json"
                 ));
     } else if (!empty($ingredientsArray) && empty($restrictionsArray)) {
+        print $includeIngredients . "<br />";
         print "Ingredients array is NOT empty and restrictions array is empty";
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
@@ -59,6 +61,8 @@
                 "Accept" => "application/json"
                 ));
     } else if (!empty($ingredientsArray) && !empty($restrictionsArray)) {
+        print $includeIngredients . "<br />";
+        print $diet . "<br />";
         print "Ingredients array is NOT empty and restrictions array NOT empty";
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
