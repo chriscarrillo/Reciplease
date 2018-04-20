@@ -15,25 +15,33 @@
 
     $getUserIngredients = getIngredients($_SESSION["id"]);
     $ingredientsArray = array();
-    while($row = $getUserIngredients->fetch_assoc()) {
+
+    while ($row = $getUserIngredients->fetch_assoc()) {
         array_push($ingredientsArray, $row["IngredientName"]);
     }
+
     $includeIngredients = implode("%2C+", $ingredientsArray);
     
     $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
-    $restrictionsArray = array();
-    while($row = $getUserDietaryRestrictions->fetch_assoc()) {
-        array_push($restrictionsArray, $row["Restriction"]);
+    
+    if ($getUserDietaryRestrictions != null) {
+        $diet = implode("%2C+", $restrictionsArray);
+        
+        $restrictionsArray = array();
+
+        while ($row = $getUserDietaryRestrictions->fetch_assoc()) {
+            array_push($restrictionsArray, $row["Restriction"]);
+        }
+
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+            array(
+                "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+                "Accept" => "application/json"
+                ));
+
+        $totalResults = $body->totalresults[0];
     }
-    $diet = implode("%2C+", $restrictionsArray);
 
-    $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
-        array(
-            "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
-            "Accept" => "application/json"
-            ));
-
-    $totalResults = $body->totalresults[0];
     if (($totalResults == 0) && (!empty($diet))) {
         
         $addRecipeInformation = "true";
@@ -50,7 +58,7 @@
             "Accept" => "application/json"
             ));
     
-    } else{
+    } else if (($totalResults != 0) && (empty($diet))) {
         $addRecipeInformation = "true";
         $fillIngredients = "true";
         $instructionsRequired = "false";
