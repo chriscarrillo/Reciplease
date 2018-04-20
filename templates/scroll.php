@@ -1,7 +1,31 @@
 <?php
     include "../unirest/src/Unirest.php";
-
+    
+if (isset($_POST["search"])) {
     //remember, commas are represented by %2C+ in the API call
+    $addRecipeInformation = "true";
+    $diet = "paleo%2C+primal";
+    $fillIngredients = "true";
+    $includeIngredients = $_POST["search"]."%2C+cheese";
+    $instructionsRequired = "false";
+    $numberOfResults = "10";
+    $numOfCalls = $_POST["page"];
+    $offset = ($numOfCalls);
+    $numOfRecipes = ($offset - 1);
+
+
+    $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+        array(
+            "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+            "Accept" => "application/json"
+            ));
+
+    //            if ($response != NULL){
+    //                echo "Successful API call.";
+    //            }
+
+} else {
+    
     $addRecipeInformation = "true";
     $diet = "paleo%2C+primal";
     $fillIngredients = "true";
@@ -21,9 +45,9 @@
 
     //            if ($response != NULL){
     //                echo "Successful API call.";
-    //            }
-
-
+    //            }    
+    
+}
     // echo $response->raw_body; // Print raw response
 
     $body = $response->body;  // Parsed response saved as an stdClass
