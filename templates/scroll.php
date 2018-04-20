@@ -32,8 +32,9 @@
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
             "Accept" => "application/json"
             ));
+
     $totalResults=$body->totalresults[0];
-    if ($totalresults == 0) {
+    if ($totalresults == 0 && $diet != "";) {
         
         $addRecipeInformation = "true";
         $fillIngredients = "true";
@@ -43,13 +44,26 @@
         $offset = ($numOfCalls);
         $numOfRecipes = ($offset - 1);
         
-        
-        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
         array(
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
             "Accept" => "application/json"
             ));
     
+    } else{
+        $addRecipeInformation = "true";
+        $fillIngredients = "true";
+        $instructionsRequired = "false";
+        $numberOfResults = "10";
+        $numOfCalls = $_POST["page"];
+        $offset = ($numOfCalls);
+        $numOfRecipes = ($offset - 1);
+        
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+        array(
+            "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+            "Accept" => "application/json"
+            ));
     }
 
     //            if ($response != NULL){
