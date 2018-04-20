@@ -30,9 +30,10 @@
         </div>
         <div id="tabs">
             <ul>
-                <li><a href="../Reciplease/index.php"><h1>home</h1></a></li>
-                <li><a href="../popular/">popular</a></li>
+                <li><h1>popular</h1></li>
+                <li><a href="../index.php">home</a></li>
                 <li><a href="../pantry/">pantry</a></li>
+                <li><a href="../bookmark/">bookmarks</a></li>
                 <li><a href="../profile/">profile</a></li>
                 <?php
                     if (isLoggedIn()) {
