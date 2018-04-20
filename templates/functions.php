@@ -26,6 +26,18 @@
                 print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
         }
     }
+
+    function removeIngredient($id, $name, $quantity) {
+        if (!($stmt = $GLOBALS['db']->prepare("DELETE FROM Ingredient WHERE UserId = ? and Quantity = ? and IngredientName = ?"))) {
+            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
+        }
+        if (!$stmt->bind_param("iis", $id, $quantity, $name)){
+                print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
+        }
+        if (!$stmt->execute()) {
+                print "Execute failed: (" . $stmt->errno .")" . $stmt->error;
+        }
+    }
     
     function getIngredients($id) {
          if (!($stmt = $GLOBALS['db']->prepare("SELECT Quantity, IngredientName FROM Ingredient WHERE UserID = ?"))){
