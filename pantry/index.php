@@ -4,7 +4,7 @@
     <title>Reciplease | pantry</title>
     <?php include "../templates/head.php" ?>
 </head>  
-<body id="pantryPage">
+<body id="homePage">
 <?php include "../templates/functions.php" ?>
     <div id="pantry">
         <?php
