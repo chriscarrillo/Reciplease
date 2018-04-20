@@ -21,7 +21,7 @@
             ?>
             
         </div>
-        <form action="" method="get" id="searchForm" class="form">
+        <form action="" method="post" id="searchForm" class="form">
                 <input type="textSearch" id="search" name="search" placeholder="search" /><br />
         </form>
         <div id="title">
