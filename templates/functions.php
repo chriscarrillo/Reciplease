@@ -44,7 +44,7 @@
     }
 
     function getDietaryRestrictions($id) {
-        if (!($stmt = $GLOBALS['db']->prepare("SELECT UserId, Restriction FROM DietaryRestriction WHERE UserID = ?"))){
+        if (!($stmt = $GLOBALS['db']->prepare("SELECT UserID, Restriction FROM DietaryRestriction WHERE UserID = ?"))){
            print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $GLOBALS['db']->error;
        }
        
