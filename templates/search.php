@@ -27,11 +27,11 @@
     $body = $response->body;      
     
     for ($i = 0; $i < (int) $numberOfResults; $i++) {
-        $url=$body->recipes[$i]->spoonacularSourceUrl;    
-        $image=$body->recipes[$i]->image;
-        $title=$body->recipes[$i]->title;
-        $score=$body->recipes[$i]->healthScore;
-        $time=$body->recipes[$i]->readyInMinutes;
+        $url=$body->results[$i]->spoonacularSourceUrl;    
+        $image=$body->results[$i]->image;
+        $title=$body->results[$i]->title;
+        $score=$body->results[$i]->healthScore;
+        $time=$body->results[$i]->readyInMinutes;
 ?>
 
 <div class="recipecard">
