@@ -58,7 +58,6 @@
     // echo $response->raw_body; // Print raw response
 
     $body = $response->body;  // Parsed response saved as an stdClass
-    var_dump($body); //print out stdClass of the $response->body
 
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->number;
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->step;
