@@ -2,9 +2,6 @@
     include "../unirest/src/Unirest.php";
     include "functions.php";
 
-  (isset($_POST["search"])) {
-       $search = $_POST["search"]."%2C+cheese";
-  }
     //remember, commas are represented by %2C+ in the API call
     $addRecipeInformation = "true";
     $diet = "";
