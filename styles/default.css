@@ -502,6 +502,15 @@ tr:hover {
     background-color: #f5f5f5;
 }
 
+/* START pantry page form */
+
+#ingredientForm {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+}
+
+/* END pantry page form */
 #searchSubmit {
 	display: none;
 }

@@ -36,11 +36,12 @@
     <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />
     
     <form method="post" id="ingredientForm" class="form" enctype="multipart/form-data">
+        <input type="checkbox" name="delete" value="delete"> Check to delete item entered
         <input type="text" id="itemName" name="itemName" placeholder="item name" required /><br />
         <input type="number" id="quantity" name="quantity" placeholder="quantity on hand" required /><br />
-        <input type="checkbox" name="delete" value="delete"> Check to delete item entered
         <input type="submit" id="itemButton" class="button" name="addItem" value="submit" />
     </form>
+    
     <table style="width:50%" align="center">
       <tr>
         <th>Ingredients</th>
