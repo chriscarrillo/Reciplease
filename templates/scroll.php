@@ -18,34 +18,49 @@
     $getUserIngredients = getIngredients($_SESSION["id"]);
     $ingredientsArray = array();
 
-    while ($row = $getUserIngredients->fetch_assoc()) {
-        array_push($ingredientsArray, $row["IngredientName"]);
+    if ($getUserIngredients != null) {
+        while ($row = $getUserIngredients->fetch_assoc()) {
+            array_push($ingredientsArray, $row["IngredientName"]);
+        }
+
+        $includeIngredients = implode("%2C+", $ingredientsArray);
     }
 
-    $includeIngredients = implode("%2C+", $ingredientsArray);
-    
     $getUserDietaryRestrictions = getDietaryRestrictions($_SESSION["id"]);
-    
-    if ($getUserDietaryRestrictions != null) {
-        $diet = implode("%2C+", $restrictionsArray);
-        
-        $restrictionsArray = array();
+    $restrictionsArray = array();
 
+    if ($getUserDietaryRestrictions != null) {
         while ($row = $getUserDietaryRestrictions->fetch_assoc()) {
             array_push($restrictionsArray, $row["Restriction"]);
         }
+        
+        $diet = implode("%2C+", $restrictionsArray);
+    }
+    
 
-        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+    if (empty($ingredientsArray) && empty($restrictionsArray)) {
+         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
                 ));
-
-        $totalResults = $body->totalresults[0];
+    } else if (empty($ingredientsArray) && !empty($restrictionsArray)) {
+         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+            array(
+                "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+                "Accept" => "application/json"
+                ));
+    } else if (!empty($ingredientsArray) && empty($restrictionsArray)) {
+        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+            array(
+                "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
+                "Accept" => "application/json"
+                ));
     }
 
-    if (($totalResults == 0) && (!empty($diet))) {
-        
+    $totalResults = $body->totalresults[0];
+
+    if ($totalResults == 0) {
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
         array(
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
