@@ -159,11 +159,11 @@
         $dobDB = date("Y-m-d", strtotime($dob));
         
         
-        if (!($stmt = $GLOBALS['db']->prepare("UPDATE User SET FirstName=?, LastName=?, UserName=?, Password=?, Email=?, ProfilePicture=?, DOB=?, FavoriteFood=? WHERE Firstname=? AND Lastname=?"))) {
+        if (!($stmt = $GLOBALS['db']->prepare("UPDATE User SET FirstName=?, LastName=?, UserName=?, Password=?, Email=?, ProfilePicture=?, DOB=?, FavoriteFood=? WHERE Firstname=?, Lastname=?"))) {
             print "Prepare failed: (" . $GLOBALS['db']->errno . ")" . $mysqli->error;
         }
         
-        if (!$stmt->bind_param("sssssbssss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, &$fNameDB, &$lNameDB)){
+        if (!$stmt->bind_param("sssssbssss", $fNameDB, $lNameDB, $usernameDB, $passwordDB, $emailDB, $profilePhoto, $dobDB, $favFood, $fNameDB, $lNameDB)){
             print "Binding paramaters failed:(" . $stmt->errno . ")" . $stmt->error;
         }
         
