@@ -2,13 +2,14 @@
     include "../unirest/src/Unirest.php";
 
     $addRecipeInformation = "true";
-    $diet;
+    // $diet;
     $fillIngredients = "true";
     $includeIngredients = "";
     $instructionsRequired = "false";
     $numberOfResults = "10";
     $numOfCalls = $_POST["page"];
-    $offset = ($numOfCalls);
+    // $offset = ($numOfCalls);
+    $offset = 0;
     $numOfRecipes = ($offset - 1);
 
     $search = $_POST["search"];
@@ -16,10 +17,8 @@
     $query = preg_replace('/\s+/', '+', $search);
     
     $recipesLoaded = ($_POST["page"] * (int) $numberOfResults) - ((int) $numberOfResults);
-
-    print "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&query=".$query."&ranking=2";
     
-    $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&query=".$query."&ranking=2",
+    $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&query=".$query."&ranking=2",
         array(
             "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
             "Accept" => "application/json"
@@ -28,11 +27,11 @@
     $body = $response->body;      
     
     for ($i = 0; $i < (int) $numberOfResults; $i++) {
-        $url=$body->recipes[$i]->spoonacularSourceUrl;    
-        $image=$body->recipes[$i]->image;
-        $title=$body->recipes[$i]->title;
-        $score=$body->recipes[$i]->healthScore;
-        $time=$body->recipes[$i]->readyInMinutes;
+        $url=$body->results[$i]->spoonacularSourceUrl;    
+        $image=$body->results[$i]->image;
+        $title=$body->results[$i]->title;
+        $score=$body->results[$i]->healthScore;
+        $time=$body->results[$i]->readyInMinutes;
 ?>
 
 <div class="recipecard">
