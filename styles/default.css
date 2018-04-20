@@ -362,7 +362,8 @@ a:active {color: black;}    /* selected link */
     display: block;
     float: left;
     width: 47%;
-    height: 25%;
+    max-height: 218px;
+    overflow: hidden;
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: -5px 6px 2px rgba(142, 142, 142, 0.5);
