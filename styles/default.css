@@ -296,7 +296,7 @@ body {
 #title {
     display: block;
     float: center;
-    width: 10%px;
+    width: 600px;
     height: 300px;
     margin-left: 400px;
     margin-right: 300px;
@@ -318,7 +318,7 @@ body {
     float: right;
     width: 300px;
     height: 300px;
-    transform: translate(-20%, -360px);
+    transform: translate(-250px, -360px);
     font-family: 'Futura';
     text-align: right;
 }
