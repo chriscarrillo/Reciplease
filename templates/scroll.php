@@ -36,21 +36,26 @@
         
         $diet = implode("%2C+", $restrictionsArray);
     }
-    
 
+    var_dump($ingredientsArray);
+    var_dump($restrictionsArray);
+    
     if (empty($ingredientsArray) && empty($restrictionsArray)) {
+        print "Ingredients array is empty and restrictions array is empty";
          $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
                 ));
     } else if (empty($ingredientsArray) && !empty($restrictionsArray)) {
+        print "Ingredients array is empty and restrictions array is NOT empty";
          $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&diet=".$diet."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
                 ));
     } else if (!empty($ingredientsArray) && empty($restrictionsArray)) {
+        print "Ingredients array is NOT empty and restrictions array is empty";
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&includeIngredients=".$includeIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
