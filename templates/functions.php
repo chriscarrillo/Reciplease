@@ -137,4 +137,8 @@
             exit;
         }
     }
+
+    function updateProfile() {
+        
+    }
 ?>
