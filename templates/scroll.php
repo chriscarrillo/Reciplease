@@ -37,7 +37,7 @@
         $diet = implode("%2C+", $restrictionsArray);
     }
 
-    var_dump($ingredientsArray);
+    var_dump($diet);
     var_dump($restrictionsArray);
     
     if (empty($ingredientsArray) && empty($restrictionsArray)) {
