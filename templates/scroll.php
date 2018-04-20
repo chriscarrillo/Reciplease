@@ -33,7 +33,6 @@
             "Accept" => "application/json"
             ));
     $totalResults=$body->totalresults[0];
-    echo $totalResults;
     if ($totaresults == 0) {
         
     $addRecipeInformation = "true";
