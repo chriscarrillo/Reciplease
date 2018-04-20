@@ -64,6 +64,7 @@
                 $itemName = $_POST["itemName"];
                 $quantity = $_POST["quantity"];
                 removeIngredient($_SESSION["id"], $itemName, $quantity);
+                header("Refresh:0");
             } else {
                 $itemName = $_POST["itemName"];
                 $quantity = $_POST["quantity"];
