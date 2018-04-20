@@ -6,10 +6,8 @@ $(document).ready(function() {
 });
 
 function search(searchText) {
-    console.log("Search function called");
     $("#ani_img").show();
     $.post("../templates/search.php", {search: searchText}, function(data) {
-        console.log("Inner function called");
         if (data.trim().length == 0) {
             $("#loading").text("End of Page");
         }
