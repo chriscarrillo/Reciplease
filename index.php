@@ -58,6 +58,16 @@
             </div>
         </div>
     
-        <script type="text/javascript" src="js/scroll.js"></script>
+        <?php 
+            if (isLoggedIn()) {
+        ?>
+            <script type="text/javascript" src="js/scroll.js"></script>
+        <?php
+            } else {
+        ?>
+            <script type="text/javascript" src="js/scrollPop.js"></script>
+        <?php
+            }
+        ?>
 </body>
 </html>

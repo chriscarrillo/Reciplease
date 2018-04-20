@@ -54,7 +54,7 @@
                 <div class="right">
                     <input type="file" id="profilePicture" name="profilePicture" /><br />
                     <p>date of birth</p>
-                    <select name="dobMonth">
+                    <select name="dobMonth" required>
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
@@ -68,7 +68,7 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
-                    <select name="dobDay">
+                    <select name="dobDay" required>
                         <?php
                             for ($i = 1; $i <= 31; $i++) {
                         ?>
@@ -83,7 +83,7 @@
                             }
                         ?>
                     </select>
-                    <select name="dobYear">
+                    <select name="dobYear" required>
                         <?php
                             for ($i = date('Y'); $i >= (int) date('Y') - 100; $i--) {
                         ?>
@@ -108,6 +108,7 @@
                         <label><input type="checkbox" name="dietaryRestrictions[]" value="vegetarian"> Vegetarian</label><br />
                     </div>
                 </div>
+                <input type="submit" name="updateProfile" value="Update Profile" />
                 </div>
             </form>
         </div>
