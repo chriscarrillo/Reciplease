@@ -2,6 +2,8 @@
     include "../unirest/src/Unirest.php";
 
     $numberOfResults = "10";
+    $recipesLoaded = ($_POST["page"] * (int) $numberOfResults) - ((int) $numberOfResults);
+
         // These code snippets use an open-source library. http://unirest.io/php
     $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?l
     limitLicense=false&number=10",
@@ -10,14 +12,13 @@
                 "Accept" => "application/json"
         ));
     $body = $response->body;      
-    for ($i = 0; $i < (int) $numberOfResults; $i++) {
-    $url=$body->recipes[$i]->spoonacularSourceUrl;    
-    $image=$body->recipes[$i]->image;
-    $title=$body->recipes[$i]->title;
-    $score=$body->recipes[$i]->healthScore;
-    $time=$body->recipes[$i]->readyInMinutes;
     
-
+    for ($i = 0; $i < (int) $numberOfResults; $i++) {
+        $url=$body->recipes[$i]->spoonacularSourceUrl;    
+        $image=$body->recipes[$i]->image;
+        $title=$body->recipes[$i]->title;
+        $score=$body->recipes[$i]->healthScore;
+        $time=$body->recipes[$i]->readyInMinutes;
 ?>
 
 <div class="recipecard">
@@ -25,13 +26,13 @@
     <div class="card1">
         <h2><?php echo $title ?></h2>
         <img src="<?php echo $image; ?>" height="150" width="150" align="right">
-        <button class="button" onclick="openModal(<?= $i ?>)">View Recipe</button>
+        <button class="button" onclick="openModal(<?= $recipesLoaded ?>)">View Recipe</button>
         <!-- The Modal -->
         <div class="modal">
           <!-- Modal content -->
           <div class="modal-content">
             <div class="modal-header">
-              <span class="close" onclick="closeModal(<?= $i ?>)">&times;</span>
+              <span class="close" onclick="closeModal(<?= $recipesLoaded ?>)">&times;</span>
               <h2><?php echo $title; ?></h2>
             </div>
             <div class="modal-body">
@@ -46,5 +47,6 @@
     </div>
 </div>
 <?php
+    $recipesLoaded++;
 }
 ?>
