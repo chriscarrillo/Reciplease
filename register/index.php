@@ -123,7 +123,6 @@
         <?php
             if (isset($_POST["registerBtn"])) {
                 $dob = $_POST["dobYear"] . "-" . $_POST["dobMonth"] . "-" . $_POST["dobDay"];
-                $dietaryRestrictions = array();
                 
                 // Check if the user uploaded its own profile picture
                 if (isset($_POST["profilePhoto"])) {
@@ -134,14 +133,10 @@
                     $profilePhoto = addslashes(file_get_contents("../images/default.png"));
                 }
                 
-                // Populate the array with dietary restrictions if they have any
-                if (!empty($_POST["dietaryRestrictions"])) {
-                    foreach ($_POST["dietaryRestrictions"] as $restriction) {
-                        array_push($dietaryRestrictions, $restriction);
-                    }
-                }
+                // Populate with dietary restrictions
+                $dietaryRestriction = $_POST["dietaryRestriction"];
                 
-                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestrictions);
+                register($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["favoriteFood"], $_POST["username"], $_POST["password"], $profilePhoto, $dob, $dietaryRestriction);
             }
         ?>
     </div>
