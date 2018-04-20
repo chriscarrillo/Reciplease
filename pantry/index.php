@@ -29,11 +29,11 @@
             <li><h1>pantry</h1></li>
             <li><a href="../index.php">home</a></li>
             <li><a href="../popular/">popular</a></li>
-            <li><a href="../bookmark/">bookmarks</a></li>
+            <!-- <li><a href="../bookmark/">bookmarks</a></li> -->
             <li><a href="../profile/">profile</a></li>
         </ul>
     </div>
-    <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" />
+    <!-- <img class="profilepic" src="../images/default.png" title="Profile Picture" alt="Profile Picture" /> -->
     
     <form method="post" id="ingredientForm" class="form" enctype="multipart/form-data">
         <input type="checkbox" name="delete" value="delete"> Check to delete item entered
