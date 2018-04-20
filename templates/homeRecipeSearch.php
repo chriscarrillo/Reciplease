@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
 <?php
-    include "unirest/src/Unirest.php";
+    include "../unirest/src/Unirest.php";
 
     //remember, commas are represented by %2C+ in the API call
     $addRecipeInformation = "true";
     $diet = "paleo%2C+primal";
-    $fillIngredients = "false";
+    $fillIngredients = "true";
     $includeIngredients = "beef%2C+cheese";
     $instructionsRequired = "false";
-    $numberOfResults = "2";
+    $numberOfResults = "1";
     $offset = "0";
 
 
@@ -32,6 +35,14 @@
     $title=$body->results[0]->title;
     $score=$body->results[0]->healthScore;
     $time=$body->results[0]->readyInMinutes;
+    //$ingredients=$body->results[0]->missedIngredients[0]->name;
+    $count=$body->results[0]->missedIngredientCount;
+    $ingredientArray=array();
+    for($i=0; $i<$count; $i++){
+        $ingredients=$body->results[0]->missedIngredients[$i]->name;
+        array_push($ingredientArray, $ingredients);
+    }
+    print_r($ingredientArray);
 
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->number;
     //echo $body->results[0]->analyzedInstructions[0]->steps[0]->step;
@@ -67,3 +78,5 @@
     ***********************************************************************************/
 
 ?>
+    </head>
+</html>
