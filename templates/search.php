@@ -16,7 +16,7 @@
     
     $query = preg_replace('/\s+/', '+', $search);
     
-    $recipesLoaded = ($_POST["page"] * (int) $numberOfResults) - ((int) $numberOfResults);
+    $recipesLoaded = ($_POST["page"] * (int) $numberOfResults);
     
     $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&query=".$query."&ranking=2",
         array(
