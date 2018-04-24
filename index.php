@@ -37,11 +37,10 @@
                 <li><a href="pantry/">pantry</a></li>
                 <li><a href="profile/">profile</a></li>
                 <?php
-                $isSearch = false;
                     if (isLoggedIn()) {
                 ?>
                 <li><a href="logout.php">logout</a></li>
-                <img class="profilepic" src="<?= $_SESSION["profilePicture"] ?>" title="Profile Picture" alt="Profile Picture"/>
+            
                 <?php
                     } else {
                 ?>
@@ -53,6 +52,7 @@
         </div>
         
         <?php
+         $isSearch = false;
             if (isset($_POST["searchSubmit"])) {
                 $isSearch = true;
         ?>
