@@ -21,8 +21,9 @@
             ?>
             
         </div>
-        <form action="" method="get" id="searchForm" class="form">
-                <input type="textSearch" id="search" name="search" placeholder="search" /><br />
+        <form action="" method="post" id="searchForm" class="form">
+            <input type="text" id="search" name="search" placeholder="search" /><br />
+            <input type="submit" id="searchSubmit" name="searchSubmit" />
         </form>
         <div id="title">
             <h1 id="title1">your recipes...</h1>
@@ -36,6 +37,7 @@
                 <!-- <li><a href="../bookmark/">bookmarks</a></li> -->
                 <li><a href="../profile/">profile</a></li>
                 <?php
+                $isSearch = false;
                     if (isLoggedIn()) {
                 ?>
                 <li><a href="../logout.php">logout</a></li>
@@ -50,6 +52,15 @@
             </ul>
         </div>
         
+        <?php
+            if (isset($_POST["searchSubmit"])) {
+                $isSearch = true;
+        ?>
+        <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
+        <?php
+            }
+        ?>
+        
         <div class="container clear">
             <div class="row">
                 <div class="results"></div>
@@ -59,6 +70,12 @@
             </div>
         </div>
     
-        <script type="text/javascript" src="../js/scrollPop.js"></script>
+       <?php
+            } else if ($isSearch == false) {
+        ?>
+            <script type="text/javascript" src="js/scrollPop.js"></script>
+        <?php
+            }
+        ?>
 </body>
 </html>
