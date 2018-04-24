@@ -1,7 +1,7 @@
 <?php
     include "../unirest/src/Unirest.php";
 
-    $numberOfResults = "10";
+    $numberOfResults = "1";
     $recipesLoaded = ($_POST["page"] * (int) $numberOfResults) - ((int) $numberOfResults);
 
         // These code snippets use an open-source library. http://unirest.io/php

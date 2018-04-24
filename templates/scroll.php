@@ -8,7 +8,7 @@
     $fillIngredients = "true";
     $includeIngredients = "";
     $instructionsRequired = "false";
-    $numberOfResults = "10";
+    $numberOfResults = "1";
     $numOfCalls = $_POST["page"];
     $offset = ($numOfCalls);
     $numOfRecipes = ($offset - 1);
