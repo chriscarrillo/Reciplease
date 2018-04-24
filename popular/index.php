@@ -41,7 +41,6 @@
                 <!-- <li><a href="../bookmark/">bookmarks</a></li> -->
                 <li><a href="../profile/">profile</a></li>
                 <li><a href="../logout.php">logout</a></li>
-                <img class="profilepic" src="<?= $_SESSION["profilePicture"] ?>" title="Profile Picture" alt="Profile Picture"/>
                 <?php
                     } else {
                 ?>
