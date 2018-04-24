@@ -34,13 +34,12 @@
             <ul>
                 <li><h1>home</h1></li>
                 <li><a href="popular/">popular</a></li>
-                <li><a href="pantry/">pantry</a></li>
-                <li><a href="profile/">profile</a></li>
                 <?php
                     if (isLoggedIn()) {
                 ?>
+                <li><a href="pantry/">pantry</a></li>
+                <li><a href="profile/">profile</a></li>
                 <li><a href="logout.php">logout</a></li>
-            
                 <?php
                     } else {
                 ?>

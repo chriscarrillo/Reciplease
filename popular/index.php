@@ -57,11 +57,15 @@
                 $isSearch = true;
         ?>
         <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
-        <?php
-            }
+       
+       <?php
+            } else {
         ?>
-        
-        <div class="container clear">
+            <script type="text/javascript" src="js/scrollPop.js"></script>
+        <?php
+            } 
+        ?>
+            <div class="container clear">
             <div class="row">
                 <div class="results"></div>
             </div>
@@ -70,12 +74,5 @@
             </div>
         </div>
     
-       <?php
-            else {
-        ?>
-            <script type="text/javascript" src="js/scrollPop.js"></script>
-        <?php
-            } 
-        ?>
 </body>
 </html>
