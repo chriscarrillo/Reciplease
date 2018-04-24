@@ -37,7 +37,6 @@
                 <!-- <li><a href="../bookmark/">bookmarks</a></li> -->
                 <li><a href="../profile/">profile</a></li>
                 <?php
-                $isSearch = false;
                     if (isLoggedIn()) {
                 ?>
                 <li><a href="../logout.php">logout</a></li>
@@ -53,6 +52,7 @@
         </div>
         
         <?php
+         $isSearch = false;
             if (isset($_POST["searchSubmit"])) {
                 $isSearch = true;
         ?>
