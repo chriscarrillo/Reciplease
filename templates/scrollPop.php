@@ -15,7 +15,7 @@
     
     for ($i = 0; $i < (int) $numberOfResults; $i++) {
         $url=$body->recipes[$i]->spoonacularSourceUrl;    
-        $image=$body->recipes [$i]->image;
+        $image=$body->recipes[$i]->image;
         $title=$body->recipes[$i]->title;
         $score=$body->recipes[$i]->healthScore;
         $time=$body->recipes[$i]->readyInMinutes;
