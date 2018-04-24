@@ -76,7 +76,7 @@
         ?>
             <script type="text/javascript" src="js/scroll.js"></script>
         <?php
-            } else if ($isSearch == false) {
+            } else {
         ?>
             <script type="text/javascript" src="js/scrollPop.js"></script>
         <?php
