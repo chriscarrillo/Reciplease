@@ -52,6 +52,15 @@
             </ul>
         </div>
         
+        <div class="container clear">
+            <div class="row">
+                <div class="results"></div>
+            </div>
+            <div class="text-center" id="loading">
+                <img src="../images/ajax-loader.gif" id="ani_img" style="width: 50px" />
+            </div>
+        </div>
+        
         <?php
          $isSearch = false;
             if (isset($_POST["searchSubmit"])) {
@@ -66,14 +75,7 @@
         <?php
             } 
         ?>
-            <div class="container clear">
-            <div class="row">
-                <div class="results"></div>
-            </div>
-            <div class="text-center" id="loading">
-                <img src="../images/ajax-loader.gif" id="ani_img" style="width: 50px" />
-            </div>
-        </div>
+            
     
 </body>
 </html>
