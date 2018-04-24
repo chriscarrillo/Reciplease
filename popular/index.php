@@ -71,7 +71,7 @@
         </div>
     
        <?php
-            } else {
+            else {
         ?>
             <script type="text/javascript" src="js/scrollPop.js"></script>
         <?php
