@@ -19,10 +19,6 @@
                     include "../templates/logo.php";
                 ?>
             </div>
-            <form action="" method="post" id="searchForm" class="form">
-                <input type="text" id="search" name="search" placeholder="search" /><br />
-                <input type="submit" id="searchSubmit" name="searchSubmit" />
-            </form>
             <div id="title">
                 <h1 id="title1">start your...</h1>
                 <h1 id="title2">food journey here</h1>
