@@ -37,6 +37,7 @@
                 <li><a href="pantry/">pantry</a></li>
                 <li><a href="profile/">profile</a></li>
                 <?php
+                $isSearch = false;
                     if (isLoggedIn()) {
                 ?>
                 <li><a href="logout.php">logout</a></li>
@@ -53,7 +54,9 @@
         
         <?php
             if (isset($_POST["searchSubmit"])) {
+                $isSearch = true;
         ?>
+        
         <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
         <?php
             }
@@ -69,11 +72,11 @@
         </div>
     
         <?php 
-            if (isLoggedIn()) {
+            if (isLoggedIn() && $isSearch == false) {
         ?>
             <script type="text/javascript" src="js/scroll.js"></script>
         <?php
-            } else {
+            } else if ($isSearch == false) {
         ?>
             <script type="text/javascript" src="js/scrollPop.js"></script>
         <?php
