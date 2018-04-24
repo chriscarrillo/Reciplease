@@ -1,12 +1,12 @@
 <?php
     include "../unirest/src/Unirest.php";
 
-    $numberOfResults = "1";
+    $numberOfResults = "10";
     $recipesLoaded = ($_POST["page"] * (int) $numberOfResults) - ((int) $numberOfResults);
 
         // These code snippets use an open-source library. http://unirest.io/php
     $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?l
-    limitLicense=false&number=10",
+    limitLicense=false&number=".$numberOfResults,
         array(
          "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"

@@ -8,7 +8,7 @@
     $fillIngredients = "true";
     $includeIngredients = "";
     $instructionsRequired = "false";
-    $numberOfResults = "1";
+    $numberOfResults = "10";
     $numOfCalls = $_POST["page"];
     $offset = ($numOfCalls);
     $numOfRecipes = ($offset - 1);
@@ -38,7 +38,7 @@
     }
     
     if (empty($ingredientsArray) && empty($restrictionsArray)) {
-         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=".$numberOfResults."&offset=".$offset."&ranking=2",
+         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=".$addRecipeInformation."&fillIngredients=".$fillIngredients."&instructionsRequired=".$instructionsRequired."&limitLicense=false&number=1".$numberOfResults."&offset=".$offset."&ranking=2",
             array(
                 "X-Mashape-Key" => "dpET0hwYnZmsh4tN4yi4Tx0EW4php1svA7QjsniM24UU0xoOYR",
                 "Accept" => "application/json"
