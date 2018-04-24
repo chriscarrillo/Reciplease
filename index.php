@@ -50,18 +50,7 @@
             </ul>
         </div>
         
-        <?php
-         $isSearch = false;
-            if (isset($_POST["searchSubmit"])) {
-                $isSearch = true;
-        ?>
-        
-        <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
-        <?php
-            }
-        ?>
-        
-        <div class="container clear">
+          <div class="container clear">
             <div class="row">
                 <div class="results"></div>
             </div>
@@ -69,11 +58,17 @@
                 <img src="images/ajax-loader.gif" id="ani_img" style="width: 50px" />
             </div>
         </div>
-    
-        <?php 
-            if (isLoggedIn() && $isSearch == false) {
+        
+        <?php
+         $isSearch = false;
+            if (isset($_POST["searchSubmit"])) {
+                $isSearch = true;
         ?>
-            <script type="text/javascript" src="js/scroll.js"></script>
+        <script type="text/javascript">search(<?= "\"" . $_POST["search"] . "\"" ?>);</script>
+        <?php
+            } else if (isLoggedIn() && $isSearch == false) {           
+        ?>
+        <script type="text/javascript" src="js/scroll.js"></script>   
         <?php
             } else {
         ?>
