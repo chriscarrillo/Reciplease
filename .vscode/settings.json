@@ -1,6 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.tslint": true
+    "source.fixAll": true
   },
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
@@ -8,5 +8,8 @@
     "**/node_modules/**"
   ],
   "typescript.format.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/**"
+  ]
 }

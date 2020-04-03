@@ -1,21 +1,27 @@
 import {addRules, createConfiguration} from 'wcb'
+import Dotenv from 'dotenv-webpack'
 
-export const configuration = addRules(createConfiguration({
-    assets: false,
+const isStorybook = process.env.STORYBOOK === 'true'
+
+/** Generated webpack configuration. */
+export const configuration = addRules(
+  createConfiguration({
+    assets: !isStorybook,
     cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
     destination: 'dist/assets',
     devServer: true,
-    html: {title: 'Reciplease'},
+    html: !isStorybook,
     paths: true,
     source: 'src/assets',
     split: true,
     webpack: {
-        resolve: {
-            alias: {
-                'react-dom': '@hot-loader/react-dom',
-            },
+      plugins: [new Dotenv()],
+      resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom',
         },
+      },
     },
-}), [
-  {test: /\.(gif|jpg|jpeg|png|svg|woff|woff2)$/, use: ['file-loader']},
-])
+  }),
+  [{test: /\.(?:gif|jpg|jpeg|png|svg)$/, use: ['file-loader']}],
+)
