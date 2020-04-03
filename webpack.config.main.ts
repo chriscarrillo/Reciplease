@@ -7,6 +7,7 @@ const isStorybook = process.env.STORYBOOK === 'true'
 export const configuration = addRules(
   createConfiguration({
     assets: !isStorybook,
+    cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
     destination: 'dist/assets',
     devServer: true,
     html: !isStorybook,
