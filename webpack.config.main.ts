@@ -1,7 +1,8 @@
-import {createConfiguration} from 'wcb'
+import {addRules, createConfiguration} from 'wcb'
 
-export const configuration = createConfiguration({
+export const configuration = addRules(createConfiguration({
     assets: false,
+    cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
     destination: 'dist/assets',
     devServer: true,
     html: {title: 'Reciplease'},
@@ -15,4 +16,6 @@ export const configuration = createConfiguration({
             },
         },
     },
-})
+}), [
+  {test: /\.(gif|jpg|jpeg|png|svg|woff|woff2)$/, use: ['file-loader']},
+])
