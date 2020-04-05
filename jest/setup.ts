@@ -6,4 +6,7 @@ import 'jest-styled-components'
 // Set up Enzyme
 configure({adapter: new Adapter()})
 
+// Add default mocks
+jest.mock('~/common/theme/variables')
+
 // Add code to execute before tests are run
