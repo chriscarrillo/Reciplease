@@ -1,0 +1,20 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.format.enable": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules/**"],
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}
