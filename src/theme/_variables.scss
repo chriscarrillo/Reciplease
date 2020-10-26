@@ -1,0 +1,19 @@
+$spacing-xsmall: 0.25rem;
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+$spacing-xlarge: 4rem;
+
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$spacers: (
+  0: 0,
+  1: $spacing-small,
+  2: $spacing-medium,
+  3: $spacing-large,
+  4: $spacing-xlarge,
+);

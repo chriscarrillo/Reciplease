@@ -1,18 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "noFallthroughCasesInSwitch": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "baseUrl": "src",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
   "extends": "./node_modules/@chriscarrillo/ts/tsconfig.json",
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
